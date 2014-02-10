@@ -12,4 +12,9 @@ ruleset Lab2 {
             notify("Second", "Notification") with sticky = true;
         }
     }
+    
+    rule second_rule {
+        select when pageview ".*"
+        notify("Hello", "Sam") with sticky = true;
+    }
 }
