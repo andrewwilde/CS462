@@ -5,6 +5,6 @@ ruleset Lab2 {
         author "Andrew Wilde"
     }
     rule first_rule {
-        notify("Andy", "This is a sample rule.") with sticky = true;
+        notify("Andy", "Try to change notification.") with sticky = true;
     }
 }
