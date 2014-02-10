@@ -9,11 +9,4 @@ ruleset Lab2 {
             notify("Second", "Notification") with sticky = true;
         }
     }
-    
-    rule second_rule {
-        pre{
-            x = page:url("query");
-        }
-        notify(x, "Test");
-    }
 }
