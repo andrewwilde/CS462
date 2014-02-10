@@ -8,8 +8,9 @@ ruleset a1299x176 {
     dispatch {
         // domain "exampley.com"
     }
-    rule andy_notify {
+    rule first_rule {
         select when pageview ".*" setting ()
-        notify("This is my notification!") with sticky = true;
+        // Display notification that will not fade.
+        notify("Hello World", "This is a sample rule.") with sticky = true;
     }
 }
