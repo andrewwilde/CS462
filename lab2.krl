@@ -6,6 +6,7 @@ ruleset Lab2 {
     }
     
     rule first_rule {
+        select when pageview ".*"
         notify("Andy", "Notifying you") with sticky = true;
         notify("Second", "Notification") with sticky = true;
     }
