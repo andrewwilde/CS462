@@ -1,4 +1,3 @@
-
 ruleset a1299x176 {
     meta {
         name "lab2"
@@ -10,7 +9,6 @@ ruleset a1299x176 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        // Display notification that will not fade.
-        notify("Hello World", "This is a sample rule.") with sticky = true;
+        notify("Andy", "This is a sample rule.") with sticky = true;
     }
 }
