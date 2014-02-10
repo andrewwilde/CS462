@@ -9,6 +9,6 @@ ruleset a1299x176 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        notify("Andy", "This is a sample rule.") with sticky = true;
+        notify("Andy", "Notifying you.") with sticky = true;
     }
 }
