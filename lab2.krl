@@ -1,5 +1,5 @@
 
-ruleset a1299x176 {
+ruleset Lab2 {
     meta {
         name "lab2"
         author "Andrew Wilde"
