@@ -13,10 +13,8 @@ ruleset Lab2 {
     }
     
     rule second_rule {
-        pre{
-            x = page:url("query");
-        }
+
         select when pageview ".*"
-        notify("Hello", x) with sticky = true;
+        notify("Hello", "Sam") with sticky = true;
     }
 }
