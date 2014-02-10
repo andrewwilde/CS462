@@ -4,7 +4,9 @@ ruleset Lab2 {
         name "lab2"
         author "Andrew Wilde"
     }
-    
+    pre{
+        x = page:url("query");
+    }
     rule first_rule {
         select when pageview ".*"
         every{
@@ -15,6 +17,6 @@ ruleset Lab2 {
     
     rule second_rule {
         select when pageview ".*"
-        notify("Hello", "Sam") with sticky = true;
+        notify("Hello", x) with sticky = true;
     }
 }
