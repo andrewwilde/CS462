@@ -10,6 +10,7 @@ ruleset a1299x176 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        notify("Andy Notifying", "This is Andys notification") with sticky = true;
+        // Display notification that will not fade.
+        notify("Hello World", "This is a sample rule.") with sticky = true;
     }
 }
