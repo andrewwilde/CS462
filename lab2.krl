@@ -6,9 +6,7 @@ ruleset Lab2 {
     }
     
     rule first_rule {
-        every {
-            notify("Andy", "Notifying you") with sticky = true;
-            notify("Second", "Notification") with sticky = true;
-        }
+        notify("Andy", "Notifying you") with sticky = true;
+        notify("Second", "Notification") with sticky = true;
     }
 }
