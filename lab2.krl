@@ -9,7 +9,9 @@ ruleset a1299x176 {
     }
     rule first_rule {
         select when pageview ".*" setting ()
-        notify("Andy", "Notifying you.") with sticky = true;
-        notify("Second", "Notification") with sticky = true;
+        every {
+            notify("Andy", "Notifying you.") with sticky = true;
+            notify("Second", "Notification") with sticky = true;
+        }
     }
 }
