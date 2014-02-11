@@ -51,9 +51,22 @@ ruleset Lab2 {
         fired{
             ent:views += 1 from 1;
         }
-        else {
+        
+    }
+    
+    rule clear_rule {
+        select when pageview ".*"
+        pre{
+            getClear = function(p){
+                            p.match(re#clear=1#) => true 
+                                                    | false;
+                            };
+            c = getClear(page);
+        }
+        if c then
+            noop();
+        fired{
             clear ent:views;
             }
-        
     }
 }
