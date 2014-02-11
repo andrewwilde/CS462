@@ -22,16 +22,19 @@ ruleset Lab2 {
                         page.match(re#name=#) => y[0] 
                                                     | "Monkey";
                         };
+            getClear = function(page){
+                        page.match(re#clear#) => true
+                                                    | false
+                        };
+                        
             y = getName(x);
-            z = ent:count;
         }
         if ent:count < 5 then
-            notify("Hello", y + ", Count: " + z) with sticky = true;
+            notify("Hello", y) with sticky = true;
         fired {
-            ent:count +=1 from 1;
         }
         else {
-            clear ent:count;
+
             }
     }
 }
