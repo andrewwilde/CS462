@@ -47,7 +47,7 @@ ruleset Lab2 {
         }
         
         if x <= 5 then
-            notify("Count: ", count) with sticky = true;
+            notify("Count: ", x) with sticky = true;
         fired{
             ent:views += 1 from 1;
         }
