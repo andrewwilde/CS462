@@ -19,7 +19,7 @@ ruleset Lab2 {
             x = page:url("query") || "Monkey";
             getName = function(){
                         p = page:url("query")
-                        p.extract(re#(name=\w)#)
+                        p.extract(re#(name=\w)#g)
                         };
             pages = ent:archive_pages;
             y = getName
