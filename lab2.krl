@@ -15,6 +15,9 @@ ruleset Lab2 {
     rule second_rule {
 
         select when pageview ".*"
-        notify("Hello", "Sam") with sticky = true;
+        pre {
+            x = page:url("query");
+        }
+        notify(x, "Sam") with sticky = true;
     }
 }
