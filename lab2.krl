@@ -20,7 +20,6 @@ ruleset Lab2 {
             getName = function(page){
                         page.extract(#name=(\w)*#) || "Monkey";
                         };
-            pages = ent:archive_pages;
             y = getName(x)
         }
         notify("Hello", y) with sticky = true;
