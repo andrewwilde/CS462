@@ -57,6 +57,7 @@ ruleset Lab2 {
     rule clear_rule {
         select when pageview ".*"
         pre{
+            page = page:url("query");
             getClear = function(p){
                             p.match(re#clear=1#) => true 
                                                     | false;
