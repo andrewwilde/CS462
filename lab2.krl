@@ -37,19 +37,23 @@ ruleset Lab2 {
     rule third_rule {
         select when pageview ".*"
         pre {
-            x = ent:views || {};
+            x = ent:views || 0;
             page = page:url("query") || "Monkey";
             getName = function(page){
                         y = page.extract(#name=(\w*)#);
                         page.match(re#name=#) => y[0] 
                                                     | "Monkey";
                         };
-            name = getName(page);
-            count = x[name] || 0;
         }
-        if count < 5 then
+        
+        if x <= 5 then
             notify("Count: ", count) with sticky = true;
-            
+        fired{
+            ent:views += 1 from 1;
+        }
+        else {
+            clear ent:views;
+            }
         
     }
 }
