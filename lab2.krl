@@ -52,7 +52,7 @@ ruleset Lab2 {
             count = x[name];
             newMap = x.put("" + name + "", count + 1);
         }
-        if num != 0 && count < 5 then
+        if count < 5 then
             notify("Count: ", count) with sticky = true;
         fired{
             set ent:views newMap;
