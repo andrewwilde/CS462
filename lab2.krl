@@ -37,7 +37,7 @@ ruleset Lab2 {
     rule third_rule {
         select when pageview ".*"
         pre {
-            x = ent:views;
+            x = ent:views + 1;
             page = page:url("query") || "Monkey";
             getName = function(page){
                         y = page.extract(#name=(\w*)#);
