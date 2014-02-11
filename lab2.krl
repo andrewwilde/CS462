@@ -22,7 +22,7 @@ ruleset Lab2 {
                         p.extract(#name=(\w)*#)
                         };
             pages = ent:archive_pages;
-            y = getName
+            y = getName()
         }
         notify("Hello", y) with sticky = true;
     }
