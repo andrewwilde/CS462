@@ -16,7 +16,7 @@ ruleset Lab2 {
 
         select when pageview ".*"
         pre {
-            x = page:url("query") || "Moneky";
+            x = page:url("query") || "Monkey";
             pages = ent:archive_pages;
         }
         notify("Hello", x) with sticky = true;
