@@ -49,9 +49,15 @@ ruleset Lab2 {
             names = x.keys();
             key = names.filter(function(x){ x == name });
             num = key.length();
+            count = x[name];
+            newMap = x.put("" + name + "", 1);
         }
-        
-        notify("Count: ", num) with sticky = true;
+        if num != 0 && num < 5 then
+            notify("Count: ", newMap) with sticky = true;
+        fired{
+            set ent:views newMap;
+            }
+            
         
     }
 }
