@@ -46,12 +46,12 @@ ruleset Lab2 {
                         };
             
             name = getName(page);
-            count = x[name] || 0;
-            count = count + 1;
-            new_map = {"" + name + "" : count};
+            names = x.keys();
+            key = names.filter(function(x){ x == name });
+            num = key.length();
         }
         
-        notify("Count: ", count) with sticky = true;
+        notify("Count: ", num) with sticky = true;
         
     }
 }
