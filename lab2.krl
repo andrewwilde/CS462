@@ -25,7 +25,7 @@ ruleset Lab2 {
             y = getName(x);
             z = ent:count;
         }
-        if ent:count > 5 within 3 days then
+        if ent:count < 5 then
             notify("Hello", y + ", Count: " + z) with sticky = true;
         fired {
             ent:count +=1 from 1;
