@@ -45,11 +45,12 @@ ruleset Lab2 {
                                                     | "Monkey";
                         };
             name = getName(page);
-            count = x{name};
-            ent:views.push(name : count);
+            count = x{name} || 0;
+            x = x.put([name], count);
         }
-        if count < 5 then
-            notify("Count:", count) with sticky = true;
-            
+
+        always{
+            set ent:views x;
+            }
     }
 }
