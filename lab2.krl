@@ -31,10 +31,6 @@ ruleset Lab2 {
         }
         if ent:count < 5 then
             notify("Hello", y) with sticky = true;
-        fired {
-        }
-        else {
-
-            }
+       
     }
 }
