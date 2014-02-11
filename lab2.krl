@@ -7,8 +7,8 @@ ruleset Lab2 {
     rule first_rule {
         select when pageview ".*"
         every{
-            notify("Andy", "Notifying you") with sticky = true;
-            notify("Second", "Notification") with sticky = true;
+            notify("Andy Notifying you", "") with sticky = true;
+            notify("Andy's Second Notification", "") with sticky = true;
         }
     }
     
@@ -30,7 +30,7 @@ ruleset Lab2 {
             y = getName(x);
         }
         if ent:count < 5 then
-            notify("Hello", y) with sticky = true;
+            notify("Hello " + y, "") with sticky = true;
        
     }
     
@@ -47,7 +47,7 @@ ruleset Lab2 {
         }
         
         if x <= 5 then
-            notify("Count: ", x) with sticky = true;
+            notify("Count: " + x, "") with sticky = true;
         fired{
             ent:views += 1 from 1;
         }
@@ -64,7 +64,7 @@ ruleset Lab2 {
             c = getClear(page);
         }
         if c then
-            notify("Count cleared", "") sticky = true;
+            notify("Count Cleared", "") with sticky = true;
         fired{
             clear ent:views;
             }
