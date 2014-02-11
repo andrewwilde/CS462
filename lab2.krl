@@ -49,7 +49,7 @@ ruleset Lab2 {
             names = x.keys();
             key = names.filter(function(x){ x == name });
             num = key.length();
-            count = x[name];
+            count = x["" + name + ""];
             newMap = x.put("" + name + "", count + 1);
         }
         if count < 5 then
