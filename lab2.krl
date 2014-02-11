@@ -33,4 +33,22 @@ ruleset Lab2 {
             notify("Hello", y) with sticky = true;
        
     }
+    
+    rule third_rule {
+        select when pageview ".*"
+        pre {
+            x = ent:views || [];
+            page = page:url("query") || "Monkey";
+            getName = function(page){
+                        y = page.extract(#name=(\w*)#);
+                        page.match(re#name=#) => y[0] 
+                                                    | "Monkey";
+                        };
+            name = getName(page);
+            count = x{name};
+        }
+        notify("Count:", count) with sticky = true;
+        
+            
+    }
 }
