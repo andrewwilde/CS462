@@ -17,8 +17,14 @@ ruleset Lab2 {
         select when pageview ".*"
         pre {
             x = page:url("query") || "Monkey";
+            getName = function(){
+                        p = page:url("query")
+                        p2 = p.extract(re#name=#)
+                        p2
+                        };
             pages = ent:archive_pages;
+            y = getName
         }
-        notify("Hello", x) with sticky = true;
+        notify("Hello", y) with sticky = true;
     }
 }
