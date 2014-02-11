@@ -18,7 +18,8 @@ ruleset Lab2 {
         pre {
             x = page:url("query") || "Monkey";
             getName = function(page){
-                        page.match(re#name=#) => page.extract(#name=(\w)*#) 
+                        y = page.extract(#name=(\w)*#);
+                        page.match(re#name=#) => y 
                                                     | "Monkey";
                         };
             y = getName(x)
