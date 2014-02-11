@@ -48,11 +48,7 @@ ruleset Lab2 {
             name = getName(page);
             count = x[name] || 0;
         }
-        if count < 5 then
-            notify("Count: ", count) with sticky = true;
+        notify("Count: ", count) with sticky = true;
         
-        always{
-            set ent:views x;
-            }
     }
 }
