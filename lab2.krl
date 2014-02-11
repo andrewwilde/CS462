@@ -22,8 +22,16 @@ ruleset Lab2 {
                         page.match(re#name=#) => y[0] 
                                                     | "Monkey";
                         };
-            y = getName(x)
+            y = getName(x);
+            z = ent:count;
         }
-        notify("Hello", y) with sticky = true;
+        if ent:count > 5 within 3 days then
+            notify("Hello", y + ", Count: " + z) with sticky = true;
+        fired {
+            ent:count +=1 from 1;
+        }
+        else {
+            clear ent:count;
+            }
     }
 }
