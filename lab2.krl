@@ -50,10 +50,10 @@ ruleset Lab2 {
             key = names.filter(function(x){ x == name });
             num = key.length();
             count = x[name];
-            newMap = x.put("" + name + "", 1);
+            newMap = x.put("" + name + "", count + 1);
         }
         if num != 0 && num < 5 then
-            notify("Count: ", newMap) with sticky = true;
+            notify("Count: ", count) with sticky = true;
         fired{
             set ent:views newMap;
             }
