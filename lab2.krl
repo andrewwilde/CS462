@@ -47,8 +47,8 @@ ruleset Lab2 {
             name = getName(page);
             count = x{name};
         }
-        notify("Count:", count) with sticky = true;
-        
+        if count < 5 then
+            notify("Count:", count) with sticky = true;
             
     }
 }
