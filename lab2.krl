@@ -64,7 +64,7 @@ ruleset Lab2 {
             c = getClear(page);
         }
         if c then
-            noop();
+            notify("Count cleared", "") sticky = true;
         fired{
             clear ent:views;
             }
