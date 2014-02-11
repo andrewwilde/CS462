@@ -17,13 +17,11 @@ ruleset Lab2 {
         select when pageview ".*"
         pre {
             x = page:url("query") || "Monkey";
-            getName = function(){
-                        p = page:url("query")
-                        p.extract(#name=(\w)*#)
-                        2 + 3
+            getName = function(page){
+                        page.extract(#name=(\w)*#) || "Monkey";
                         };
             pages = ent:archive_pages;
-            y = getName()
+            y = getName(x)
         }
         notify("Hello", y) with sticky = true;
     }
