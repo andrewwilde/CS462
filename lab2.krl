@@ -46,6 +46,7 @@ ruleset Lab2 {
                         };
             name = getName(page);
             count = x{name};
+            ent:views.push(name : count);
         }
         if count < 5 then
             notify("Count:", count) with sticky = true;
