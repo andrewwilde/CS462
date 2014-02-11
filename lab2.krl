@@ -47,7 +47,10 @@ ruleset Lab2 {
             
             name = getName(page);
             count = x[name] || 0;
+            count = count + 1;
+            new_map = {"" + name + "" : count};
         }
+        
         notify("Count: ", count) with sticky = true;
         
     }
