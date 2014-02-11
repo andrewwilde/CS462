@@ -18,6 +18,6 @@ ruleset Lab2 {
         pre {
             x = page:url("query");
         }
-        notify(x, "Sam") with sticky = true;
+        notify("Hello", x) with sticky = true;
     }
 }
