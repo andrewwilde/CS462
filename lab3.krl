@@ -36,10 +36,9 @@ ruleset Lab3 {
       
     }
     
-    watch("#my_form", "submit");
-    
     if(not ent:lastname) then
-      replace_inner("#main", a_form);
+      append("#main", a_form);
+      watch("#my_form", "submit");
   }
   
   rule show_name{
