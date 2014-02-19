@@ -18,7 +18,7 @@ ruleset Lab3 {
     always {
       clear ent:lastname;
       clear ent:firstname;
-      last
+      last;
     }
   }
 
@@ -37,7 +37,7 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname) then
-      append("#main", a_form);
+      replace_inner("#main", "#my_form");
       watch("#my_form", "submit");
     fired{
       last;
