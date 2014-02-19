@@ -58,7 +58,7 @@ ruleset Lab3 {
         firstname = event:attr("first");
         lastname = event:attr("last");
       }
-      notify("Performing", "Do Submit");
+      replace_inner("#main", firstname);
       
       fired{
         set ent:firstname firstname;
