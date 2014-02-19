@@ -1,5 +1,15 @@
 ruleset Lab3 {
 
+  rule add_div {
+    select when pageview url re#.*#
+    pre {
+      my_div = << 
+                  <div id="main"></div>
+                >>;
+    }
+    notify ("Lab 3", my_div) with sticky = true;
+  }
+
   rule clear_rule {
     select when pageview re#\?clear=1#
     
@@ -31,9 +41,7 @@ ruleset Lab3 {
   rule show_form{
     select when pageview url re#.*#
     pre {
-      my_div = << 
-                  <div id="main"></div>
-                >>;
+
       my_form = << 
                   <form id="my_form" onsubmit = "return false">
                   <input type="text" name="first"/>
@@ -45,7 +53,7 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname && not ent:firstname) then
-      notify("Please fill in your first and last name:", my_form) with sticky = true;
+      append("#main", my_form);
     fired{
       last
     }
