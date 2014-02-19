@@ -5,9 +5,10 @@ ruleset Lab3 {
     pre {
       my_div = << 
                   <div id="andy_div"></div>
-                  <div id="name_id'></div>
+                  <div id="name_id"></div>
                 >>;
     }
+    
     replace_inner("#main", my_div);
   }
 
