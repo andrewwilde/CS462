@@ -37,7 +37,7 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname) then
-      replace_inner("#main", "#my_form");
+      replace_inner("#main", a_form);
     fired{
       last;
     }
