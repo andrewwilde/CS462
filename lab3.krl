@@ -4,10 +4,10 @@ ruleset Lab3 {
     select when pageview url re#.*#
     pre {
       my_div = << 
-                  <div id="main">This is the div</div>
+                  <div id="andy_div">This is the div</div>
                 >>;
     }
-    notify ("Lab 3", my_div) with sticky = true;
+    replace_inner("#main", my_div);
   }
 
   rule clear_rule {
