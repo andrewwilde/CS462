@@ -44,10 +44,10 @@ ruleset Lab3 {
     rule show_name{
     select when pageview url re#.*#
     pre {
-      
+      name = ent:firstname + " " + ent:lastname
     }
     if(ent:firstname && ent:lastname) then{
-      replace_inner("#main", ent:firstname);
+      append("#main", name);
     }
   }
 
