@@ -29,7 +29,7 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname && not ent:firstname) then
-      notify("Hello", my_form) with sticky = true;
+      notify("Please fill in your first and last name:", my_form) with sticky = true;
     fired{
       last
     }
