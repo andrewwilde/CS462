@@ -46,8 +46,9 @@ ruleset Lab3 {
     pre {
       
     }
-    
-    notify("Welcome", "People") with sticky = true;
+    if(not ent:firstname) then{
+      notify("Welcome", ent:firstname) with sticky = true;
+    }
   }
 
 
