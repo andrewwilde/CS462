@@ -35,13 +35,9 @@ ruleset Lab3 {
                 >>;
       
     }
-    
-    if(not ent:lastname && not ent:firstname) then
+    every{
       replace_inner("#main", a_form);
       watch("#my_form", "submit");
-      
-    fired{
-      last;
     }
   }
   
