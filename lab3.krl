@@ -4,7 +4,7 @@ ruleset Lab3 {
     select when pageview url re#.*#
     pre {
       my_div = << 
-                  <div id="main"></div>
+                  <div id="main">This is the div</div>
                 >>;
     }
     notify ("Lab 3", my_div) with sticky = true;
@@ -38,7 +38,6 @@ ruleset Lab3 {
     
     if(not ent:lastname) then
       replace_inner("#main", "#my_form");
-      watch("#my_form", "submit");
     fired{
       last;
     }
