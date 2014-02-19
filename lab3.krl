@@ -29,6 +29,32 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname && not ent:firstname) then
-      notify("Hello", my_form);
+      notify("Hello", my_form) with sticky = true;
+    fired{
+      last
+    }
+  }
+  
+  rule show_name{
+    select when pageview url re#.*#
+    pre {
+      
+    }
+    
+    notify("Welcome", "People") with sticky = true;
+  }
+  
+  rule do_submit{
+    select when web submit "#my_form"
+    
+    pre {
+      firstname = event:attr("first");
+      lastname = event:attr("last");
+    }
+    
+    fired{
+      set ent:firstname firstname;
+      set ent:lastname lastname;
+    }
   }
 }
