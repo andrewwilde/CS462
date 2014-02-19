@@ -54,6 +54,7 @@ ruleset Lab3 {
     
     if(not ent:lastname && not ent:firstname) then
       append("#main", my_form);
+      watch("#my_form", "submit");
     fired{
       last
     }
