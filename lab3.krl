@@ -58,7 +58,7 @@ ruleset Lab3 {
       pre {
         firstname = event:attr("first");
         lastname = event:attr("last");
-        name = firstname + " " lastname;
+        name = firstname + " " + lastname;
       }
       append("#main", name);
       
