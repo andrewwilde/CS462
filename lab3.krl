@@ -27,7 +27,7 @@ ruleset Lab3 {
     pre {
 
       a_form = << 
-                  <form id="my_form" onsubmit="false">
+                  <form id="my_form" onsubmit="return false">
                   <input type="text" name="first"/>
                   <input type="text" name="last"/>
                   <input type="submit" value="Submit"/>
