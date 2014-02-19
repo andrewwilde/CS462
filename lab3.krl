@@ -4,7 +4,8 @@ ruleset Lab3 {
     select when pageview url re#.*#
     pre {
       my_div = << 
-                  <div id="andy_div"><div id="name_id'></div></div>
+                  <div id="andy_div"></div>
+                  <div id="name_id'></div>
                 >>;
     }
     replace_inner("#main", my_div);
