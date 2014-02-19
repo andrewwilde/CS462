@@ -20,9 +20,7 @@ ruleset Lab3 {
       watch("#my_form", "submit");
       notify("Lab 3 Stuff", my_form) with sticky = true;
     }
-    fired {
-      last;
-    }
+
   }
   
   rule do_submit{
@@ -33,6 +31,7 @@ ruleset Lab3 {
       lastname = event:attr("last");
     }
     
+    replace_inner("#main", "Hello #{firstname} #{lastname}");
     fired{
       set ent:firstname firstname;
       set ent:lastname lastname;
