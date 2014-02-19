@@ -11,6 +11,22 @@ ruleset Lab3 {
       last
     }
   }
+  
+  rule do_submit{
+    select when web submit "#my_form"
+    
+    pre {
+      firstname = event:attr("first");
+      lastname = event:attr("last");
+    }
+    
+    replace_inner("#my_div", "Hello!");
+    
+    fired{
+      set ent:firstname firstname;
+      set ent:lastname lastname;
+    }
+  }
 
   rule show_form{
     select when pageview url re#.*#
@@ -42,21 +58,5 @@ ruleset Lab3 {
     }
     
     notify("Welcome", "People") with sticky = true;
-  }
-  
-  rule do_submit{
-    select when web submit "#my_form"
-    
-    pre {
-      firstname = event:attr("first");
-      lastname = event:attr("last");
-    }
-    
-    replace_inner("#my_div", "Hello!");
-    
-    fired{
-      set ent:firstname firstname;
-      set ent:lastname lastname;
-    }
   }
 }
