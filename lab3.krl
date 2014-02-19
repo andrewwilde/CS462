@@ -27,7 +27,7 @@ ruleset Lab3 {
     pre {
 
       a_form = << 
-                  <form id="my_form" onsubmit = "return false">
+                  <form id="my_form" onsubmit="return false">
                   <input type="text" name="first"/>
                   <input type="text" name="last"/>
                   <input type="submit" value="Submit"/>
@@ -61,8 +61,7 @@ ruleset Lab3 {
         firstname = event:attr("first");
         lastname = event:attr("last");
       }
-      
-      replace_inner("#my_div", "Hello #{firstname} #{lastname}");
+      notify("Performing", "Do Submit");
       
       fired{
         set ent:firstname firstname;
