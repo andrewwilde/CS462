@@ -4,7 +4,7 @@ ruleset Lab3 {
     select when pageview url re#.*#
     pre {
       my_div = << 
-                  <div id="andy_div"></div>
+                  <div id="andy_div"><div id="name_id'></div></div>
                 >>;
     }
     replace_inner("#main", my_div);
@@ -47,7 +47,7 @@ ruleset Lab3 {
       name = ent:firstname + " " + ent:lastname
     }
     if(ent:firstname && ent:lastname) then{
-      append("#main", name);
+      replace_inner("#name_id", name);
     }
   }
 
@@ -60,7 +60,7 @@ ruleset Lab3 {
         lastname = event:attr("last");
         name = firstname + " " + lastname;
       }
-      append("#main", name);
+      replace_inner("#name_id", name);
       
       fired{
         set ent:firstname firstname;
