@@ -17,9 +17,9 @@ ruleset Lab3 {
     }
     
     if(not ent:firstname && not ent:lastname) then {
-      replace_inner("#main", my_div);
+      replace_inner("#main", "#{my_div}");
+      notify("My Div", my_div) with sticky = true;
       watch("#my_form", "submit");
-      notify("", my_div) with sticky = true;
     }
 
   }
