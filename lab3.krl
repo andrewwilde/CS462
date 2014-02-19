@@ -36,6 +36,8 @@ ruleset Lab3 {
       
     }
     
+    watch("#my_form", "submit");
+    
     if(not ent:lastname) then
       replace_inner("#main", a_form);
     fired{
