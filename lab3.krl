@@ -58,8 +58,9 @@ ruleset Lab3 {
       pre {
         firstname = event:attr("first");
         lastname = event:attr("last");
+        name = firstname + " " lastname;
       }
-      replace_inner("#main", firstname);
+      append("#main", name);
       
       fired{
         set ent:firstname firstname;
