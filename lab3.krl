@@ -25,24 +25,7 @@ ruleset Lab3 {
       
     }
     
-    notify("Test", "test) with sticky = true;
+    notify("Hello", my_form);
 
   }
-  
-  rule do_submit{
-    select when web submit "#my_form"
-    
-    pre {
-      firstname = event:attr("first");
-      lastname = event:attr("last");
-    }
-    
-    replace_inner("#main", "Hello #{firstname} #{lastname}");
-    
-    fired{
-      set ent:firstname firstname;
-      set ent:lastname lastname;
-    }
-  }
-
 }
