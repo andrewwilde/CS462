@@ -29,6 +29,6 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname && not ent:firstname) then
-      notify("Hello", "World");
+      notify("Hello", my_form);
   }
 }
