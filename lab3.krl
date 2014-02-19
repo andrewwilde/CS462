@@ -2,6 +2,9 @@ ruleset Lab3 {
 
   rule clear_rule {
     select when pageview re#\?clear=1#
+    
+    notify("Clearing Name", "");
+    
     always {
       clear ent:lastname;
       clear ent:firstname;
