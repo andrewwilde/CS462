@@ -36,7 +36,7 @@ ruleset Lab3 {
       
     }
     every{
-      replace_inner("#main", a_form);
+      replace_inner("#andy_div", a_form);
       watch("#my_form", "submit");
     }
   }
@@ -60,6 +60,7 @@ ruleset Lab3 {
         lastname = event:attr("last");
         name = firstname + " " + lastname;
       }
+      
       replace_inner("#name_id", name);
       
       fired{
