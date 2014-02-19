@@ -17,7 +17,7 @@ ruleset Lab3 {
     }
     
     notify("Lab 3 Stuff", my_form) with sticky = true;
-    watch(#my_form", "submit");
+    watch("#my_form", "submit");
   }
 
 }
