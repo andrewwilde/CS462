@@ -27,7 +27,7 @@ ruleset Lab3 {
     pre {
 
       a_form = << 
-                  <form id="my_form">
+                  <form id="my_form" onsubmit="false">
                   <input type="text" name="first"/>
                   <input type="text" name="last"/>
                   <input type="submit" value="Submit"/>
@@ -40,9 +40,6 @@ ruleset Lab3 {
     
     if(not ent:lastname) then
       replace_inner("#main", a_form);
-    fired{
-      last;
-    }
   }
   
   rule show_name{
