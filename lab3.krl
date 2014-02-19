@@ -52,6 +52,8 @@ ruleset Lab3 {
       lastname = event:attr("last");
     }
     
+    replace_inner("#my_div", "Hello!");
+    
     fired{
       set ent:firstname firstname;
       set ent:lastname lastname;
