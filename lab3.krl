@@ -45,28 +45,5 @@ ruleset Lab3 {
     }
   }
   
-  rule show_name{
-    select when pageview url re#.*#
-    pre {
-      
-    }
-    
-    notify("Welcome", "People") with sticky = true;
-  }
 
-
-  rule do_submit{
-      select when web submit "#my_form"
-      
-      pre {
-        firstname = event:attr("first");
-        lastname = event:attr("last");
-      }
-      notify("Performing", "Do Submit");
-      
-      fired{
-        set ent:firstname firstname;
-        set ent:lastname lastname;
-      }
-    }
 }
