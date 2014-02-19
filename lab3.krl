@@ -16,9 +16,27 @@ ruleset Lab3 {
       
     }
     
-    watch("#my_form", "submit");
-    notify("Lab 3 Stuff", my_form) with sticky = true;
-
+    if(not ent:firstname && not ent:lastname) then {
+      watch("#my_form", "submit");
+      notify("Lab 3 Stuff", my_form) with sticky = true;
+    }
+    fired {
+      last;
+    }
+  }
+  
+  rule do_submit{
+    select when web submit "#my_form"
+    
+    pre {
+      firstname = event:attr("first");
+      lastname = event:attr("last");
+    }
+    
+    fired{
+      set ent:firstname firstname;
+      set ent:lastname lastname;
+    }
   }
 
 }
