@@ -1,5 +1,14 @@
 ruleset Lab3 {
 
+  rule clear_rule {
+    select when pageview re#\?clear=1#
+    always {
+      clear ent:lastname;
+      clear ent:firstname;
+      last
+    }
+  }
+
   rule show_form{
     select when pageview url re#.*#
     pre {
@@ -17,9 +26,9 @@ ruleset Lab3 {
     }
     
     if(not ent:firstname && not ent:lastname) then {
+      watch("#my_form", "submit");
       replace_inner("#main", "#my_form");
       notify("My Div", my_div) with sticky = true;
-      watch("#my_form", "submit");
     }
 
   }
