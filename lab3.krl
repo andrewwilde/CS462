@@ -17,8 +17,9 @@ ruleset Lab3 {
     }
     
     if(not ent:firstname && not ent:lastname) then {
+      replace_inner("#main", my_div);
       watch("#my_form", "submit");
-      notify("Lab 3 Stuff", my_form) with sticky = true;
+      notify("", my_div) with sticky = true;
     }
 
   }
@@ -32,6 +33,7 @@ ruleset Lab3 {
     }
     
     replace_inner("#main", "Hello #{firstname} #{lastname}");
+    
     fired{
       set ent:firstname firstname;
       set ent:lastname lastname;
