@@ -36,9 +36,13 @@ ruleset Lab3 {
       
     }
     
-    if(not ent:lastname) then
+    if(not ent:lastname && not ent:firstname) then
       replace_inner("#main", a_form);
       watch("#my_form", "submit");
+      
+    fired{
+      last;
+    }
   }
   
   rule show_name{
