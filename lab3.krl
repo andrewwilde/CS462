@@ -46,8 +46,8 @@ ruleset Lab3 {
     pre {
       
     }
-    if(not ent:firstname) then{
-      notify("Welcome", ent:firstname) with sticky = true;
+    if(ent:firstname && ent:lastname) then{
+      replace_inner("#main", ent:firstname);
     }
   }
 
