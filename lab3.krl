@@ -37,7 +37,7 @@ ruleset Lab3 {
     }
     
     if(not ent:lastname) then
-      append("#main", a_form);
+      replace_inner("#main", a_form);
       watch("#my_form", "submit");
   }
   
