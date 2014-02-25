@@ -34,7 +34,7 @@ ruleset rotten_tomatoes{
     }
     every{
       replace_inner("#form_id", a_form);
-      watch("#my_form", "submit");
+      //watch("#my_form", "submit");
     }
   }
 }
