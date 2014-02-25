@@ -45,7 +45,7 @@ ruleset Lab3 {
         json_from_url = r.pick("$.total").decode();        
       }
       
-      notify("Submitted", json_from_url)
+      notify(json_from_url, json_from_url)
   }
 
 }
