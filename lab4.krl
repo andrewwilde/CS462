@@ -8,7 +8,7 @@ ruleset rotten_tomatoes{
     
   }
   
-  rule obtain_rating {
+  rule set_structure {
     select when pageview re#.*#
     
     pre{
@@ -16,6 +16,24 @@ ruleset rotten_tomatoes{
                   <div id="movie_id"></div>
                   <div id="form_id"></div>
                 >>;
+    }
+  }
+  
+  rule show_form{
+    select when pageview url re#.*#
+    pre {
+
+      a_form = << 
+                  <form id="my_form" onsubmit="return false">
+                  Movie: <input type="text" name="movie"/>
+                  <input type="submit" value="Submit"/>
+                  </form>
+                >>;
+      
+    }
+    every{
+      replace_inner("#form_id", a_form);
+      watch("#my_form", "submit");
     }
   }
 }
