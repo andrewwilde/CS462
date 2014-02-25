@@ -1,4 +1,4 @@
-ruleset rotten_tomatoes{
+ruleset Lab4{
 
   rule add_div {
     select when pageview url re#.*#
