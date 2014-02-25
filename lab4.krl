@@ -9,7 +9,7 @@ ruleset rotten_tomatoes{
   }
   
   rule set_structure {
-    select when pageview re#.*#
+    select when pageview url re#.*#
     
     pre{
      my_div = << 
