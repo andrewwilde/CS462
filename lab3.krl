@@ -1,10 +1,6 @@
 ruleset Lab3 {
 
   global {
-    r = http:get("http://http://api.rottentomatoes.com/api/public/v1.0/movies.json",
-                {"apikey": "xhkss6kr29cnqzt87b4hmyvv"}
-                );
-    
   }
 
   rule add_div {
@@ -39,6 +35,14 @@ ruleset Lab3 {
 
   rule do_submit{
       select when web submit "#my_form"
+      
+      pre {
+        name = event:attr("first");
+        r = http:get("http://http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+                {"apikey": "xhkss6kr29cnqzt87b4hmyvv"},
+                {"q": name}
+                );
+      }
       
       notify("Submitted", "")
   }
