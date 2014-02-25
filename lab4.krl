@@ -17,6 +17,8 @@ ruleset rotten_tomatoes{
                   <div id="form_id"></div>
                 >>;
     }
+    
+    replace_inner(#main", my_div);
   }
   
   rule show_form{
@@ -36,4 +38,5 @@ ruleset rotten_tomatoes{
       watch("#my_form", "submit");
     }
   }
+  
 }
