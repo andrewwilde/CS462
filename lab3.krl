@@ -42,9 +42,10 @@ ruleset Lab3 {
                 {"apikey": "xhkss6kr29cnqzt87b4hmyvv"},
                 {"q": name}
                 );
+        json_from_url = r.pick("$.movies").decode();        
       }
       
-      notify("Submitted", "")
+      notify("Submitted", json_from_url)
   }
 
 }
