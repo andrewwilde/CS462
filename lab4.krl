@@ -12,7 +12,10 @@ ruleset rotten_tomatoes{
     select when pageview re#.*#
     
     pre{
-      movie = page:env("title");
+     my_div = << 
+                  <div id="movie_id"></div>
+                  <div id="form_id"></div>
+                >>;
     }
   }
 }
