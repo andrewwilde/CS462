@@ -13,14 +13,12 @@ ruleset rotten_tomatoes{
     
     pre{
      my_div = << 
-                  <div id="movie_id"></div>
-                  <div id="form_id"></div>
+                  <div id="movie_id">Movie</div>
+                  <div id="form_id">Form</div>
                 >>;
     }
-    every {
-      notify("Hello", "");
-      replace_inner(#main", my_div);
-    }
+    replace_inner(#main", my_div);
+  
   }
   
   rule show_form{
