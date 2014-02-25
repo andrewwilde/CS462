@@ -9,7 +9,7 @@ ruleset rotten_tomatoes{
   }
   
   rule obtain_rating {
-    select when pageview re#\imdb.com#
+    select when pageview re#.*#
     
     pre{
       movie = page:env("title");
