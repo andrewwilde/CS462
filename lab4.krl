@@ -17,8 +17,10 @@ ruleset rotten_tomatoes{
                   <div id="form_id"></div>
                 >>;
     }
-    
-    replace_inner(#main", my_div);
+    every {
+      notify("Hello", "");
+      replace_inner(#main", my_div);
+    }
   }
   
   rule show_form{
