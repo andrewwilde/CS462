@@ -16,7 +16,7 @@ ruleset rotten_tomatoes{
                   <div id="form_id"></div>
                 >>;
     }
-    replace_inner("#main", my_div);
+    replace_inner("#content", my_div);
   }
   
   rule show_form{
