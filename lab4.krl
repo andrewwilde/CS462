@@ -1,74 +1,39 @@
-ruleset Lab4{
+ruleset rotten_tomatoes{
 
-  rule add_div {
+  global {
+    r = http:get("http://http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+               {"apikey": "xhkss6kr29cnqzt87b4hmyvv"
+               }
+              );
+    
+  }
+  
+  rule set_structure {
     select when pageview url re#.*#
-    pre {
-      my_div = << 
-                  <div id="andy_div"></div>
-                  <div id="name_id"></div>
+    
+    pre{
+     my_div = << 
+                  <div id="movie_id"></div>
+                  <div id="form_id"></div>
                 >>;
     }
-    
-    replace_inner("#main", my_div);
   }
-
-  rule clear_rule {
-    select when pageview re#\?clear=1#
-    
-    replace_inner("#main", "Cleared Name");
-    
-    always {
-      clear ent:lastname;
-      clear ent:firstname;
-      last;
-    }
-  }
-
+  
   rule show_form{
     select when pageview url re#.*#
     pre {
 
       a_form = << 
                   <form id="my_form" onsubmit="return false">
-                  <input type="text" name="first"/>
-                  <input type="text" name="last"/>
+                  Movie: <input type="text" name="movie"/>
                   <input type="submit" value="Submit"/>
                   </form>
                 >>;
       
     }
     every{
-      replace_inner("#andy_div", a_form);
+      replace_inner("#form_id", a_form);
       watch("#my_form", "submit");
     }
   }
-  
-    rule show_name{
-    select when pageview url re#.*#
-    pre {
-      name = ent:firstname + " " + ent:lastname
-    }
-    if(ent:firstname && ent:lastname) then{
-      replace_inner("#name_id", name);
-    }
-  }
-
-
-  rule do_submit{
-      select when web submit "#my_form"
-      
-      pre {
-        firstname = event:attr("first");
-        lastname = event:attr("last");
-        name = firstname + " " + lastname;
-      }
-      
-      replace_inner("#name_id", name);
-      
-      fired{
-        set ent:firstname firstname;
-        set ent:lastname lastname;
-      }
-    }
-
 }
