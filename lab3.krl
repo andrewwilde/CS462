@@ -59,7 +59,7 @@ ruleset Lab3 {
                         <tr><td>Critics Consensus: </td><td>#{consensus}</td></tr>
                         </table> >>;
                         
-        message = "No Movie Found";
+        message = "No Movie Found with Name " + name;
       
         getStuff = function(tot){
                   (tot > 0) => movie_div | message
