@@ -52,6 +52,10 @@ ruleset Lab3 {
                         <tr><td><img src="#{thumbnail}"></td>
                               <td>#{title}</td></tr>
                         <tr><td>Year: </td><td>#{year}</td></tr>
+                        <tr><td>Synopsis: </td><td>#{synopsis}</td></tr>
+                        <tr><td>Critic Rating: </td><td>#{critic_rating}</td></tr>
+                        <tr><td>Runtime: </td><td>#{runtime}</td></tr>
+                        <tr><td>Critics Consensus: </td><td>#{consensus}</td></tr>
                         </table> >>;
       }
       
