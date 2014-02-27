@@ -45,7 +45,7 @@ ruleset Lab3 {
         json_from_url = r.decode();
       }
       
-      notify(json_from_url, json_from_url)
+      replace_inner("#name_id", json_from_url)
   }
 
 }
