@@ -7,8 +7,8 @@ ruleset Lab3 {
     select when pageview url re#.*#
     pre {
       my_div = << 
-                  <div id="andy_div"></div>
                   <div id="name_id"></div>
+                  <div id="andy_div"></div>
                 >>;
     }
     
@@ -40,10 +40,14 @@ ruleset Lab3 {
         name = event:attr("first");
         url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=xhkss6kr29cnqzt87b4hmyvv&q=" + name;
         r = http:get(url).pick("$.content").decode();
-        titles = r.pick("$.movies[0].title");
+        thumbnail = r.pick("$.movies[0].thumbnail");
+        title = r.pick("$.movies[0].title");
       }
       
-      replace_inner("#name_id", titles)
+      every {
+        replace_inner("#name_id", thumbnail)
+        append("#name_id", title)
+      }
   }
 
 }
