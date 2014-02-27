@@ -64,5 +64,18 @@ ruleset Lab3 {
       replace_inner("#name_id", movie_div);
 
   }
+  
+    rule do_submit_two{
+      select when web submit "#my_form"
+        pre {
+          url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=xhkss6kr29cnqzt87b4hmyvv&q=" + name;
+          r = http:get(url).pick("$.content").decode();
+          total = r.pick("$.total");
+        }
+        
+        if(total == "0") then {
+          replace_inner("#name_id", "Not Found");
+        }
+    }
 
 }
