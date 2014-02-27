@@ -42,7 +42,7 @@ ruleset Lab3 {
                 {"apikey": "xhkss6kr29cnqzt87b4hmyvv",
                 "q": name}
                 );
-        json_from_url = http:get(r).pick("$.content").decode();
+        json_from_url = r.decode();
       }
       
       notify(json_from_url, json_from_url)
