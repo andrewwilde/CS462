@@ -45,8 +45,8 @@ ruleset Lab3 {
       }
       
       every {
-        replace_inner("#name_id", thumbnail)
-        append("#name_id", title)
+        replace_inner("#name_id", thumbnail);
+        append("#name_id", title);
       }
   }
 
