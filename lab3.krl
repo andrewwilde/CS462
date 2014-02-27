@@ -44,7 +44,7 @@ ruleset Lab3 {
         title = r.pick("$.movies[0].title");
         year = r.pick("$.movies[0].year");
         synopsis = r.pick("$.movies[0].synopsis");
-        critic_rating = r.pick("$.movies[0].rating.critics_rating");
+        critic_rating = r.pick("$.movies[0].ratings.critics_rating");
         runtime = r.pick("$.movies[0].runtime");
         consensus = r.pick("$.movies[0].critics_consensus");
         
