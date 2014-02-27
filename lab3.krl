@@ -58,22 +58,20 @@ ruleset Lab3 {
                         <tr><td>Runtime: </td><td>#{runtime}</td></tr>
                         <tr><td>Critics Consensus: </td><td>#{consensus}</td></tr>
                         </table> >>;
+                        
+        message = "No Movie Found";
+      
+        blast = function(tot){
+                (tot > 0) => movie_div | message
+              }
+        
+        real_message = blast(total);
       }
       
 
-      replace_inner("#name_id", movie_div);
+      
+      replace_inner("#name_id", real_message);
 
   }
   
-    rule do_submit_two{
-      select when web submit "#my_form"
-        pre {
-          url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=xhkss6kr29cnqzt87b4hmyvv&q=" + name;
-          r = http:get(url).pick("$.content").decode();
-          total = r.pick("$.total");
-        }
-        
-        notify("Hello", total);
-    }
-
 }
