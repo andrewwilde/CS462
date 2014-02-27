@@ -50,7 +50,7 @@ ruleset Lab3 {
         
         movie_div = << <table bordoer = 0>
                         <tr><td><img src="#{thumbnail}"></td>
-                              <td>#{title}</td></tr>
+                              <td><h3>#{title}</h3></td></tr>
                         <tr><td>Year: </td><td>#{year}</td></tr>
                         <tr><td>Synopsis: </td><td>#{synopsis}</td></tr>
                         <tr><td>Critic Rating: </td><td>#{critic_rating}</td></tr>
