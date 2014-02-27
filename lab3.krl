@@ -73,7 +73,7 @@ ruleset Lab3 {
           total = r.pick("$.total");
         }
         
-        if(total eq "0") then {
+        if(total == 0) then {
           replace_inner("#name_id", "Not Found");
         }
     }
