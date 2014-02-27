@@ -61,16 +61,15 @@ ruleset Lab3 {
                         
         message = "No Movie Found";
       
-        blast = function(tot){
-                (tot > 0) => movie_div | message;
-              }
+        getStuff = function(tot){
+                  (tot > 0) => movie_div | message
+                }
         
-        real_message = blast(total);
       }
       
 
       
-      replace_inner("#name_id", real_message);
+      replace_inner("#name_id", getStuff(total));
 
   }
   
