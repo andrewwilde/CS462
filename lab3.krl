@@ -60,15 +60,9 @@ ruleset Lab3 {
                         </table> >>;
       }
       
-      if(total > 0) then {
-        noop();
-      }
-      fired{
-        replace_inner("#name_id", movie_div);
-      }
-      else {
-        replace_inner("#name_id", "Not Found");
-      }
+
+      replace_inner("#name_id", movie_div);
+
   }
 
 }
