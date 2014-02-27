@@ -45,7 +45,7 @@ ruleset Lab3 {
         json_from_url = r.pick("$.synopsis").decode();        
       }
       
-      notify(json_from_url, json_from_url)
+      notify(r, json_from_url)
   }
 
 }
