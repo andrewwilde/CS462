@@ -39,8 +39,8 @@ ruleset Lab3 {
       pre {
         name = event:attr("first");
         r = http:get("http://http://api.rottentomatoes.com/api/public/v1.0/movies.json",
-                {"apikey": "xhkss6kr29cnqzt87b4hmyvv"},
-                {"q": name}
+                {"apikey": "xhkss6kr29cnqzt87b4hmyvv",
+                "q": name}
                 );
         json_from_url = r.pick("$.synopsis").decode();        
       }
