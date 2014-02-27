@@ -42,7 +42,7 @@ ruleset Lab3 {
         r = http:get(url).pick("$.content").decode();
       }
       
-      replace_inner("#name_id", name)
+      replace_inner("#name_id", url)
   }
 
 }
