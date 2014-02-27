@@ -42,11 +42,17 @@ ruleset Lab3 {
         r = http:get(url).pick("$.content").decode();
         thumbnail = r.pick("$.movies[0].posters.thumbnail");
         title = r.pick("$.movies[0].title");
+        year = r.pick("$.movies[0].year");
+        synopsis = r.pick("$.movies[0].synopsis");
+        critic_rating = r.pick("$.movies[0].rating.critics_rating");
+        runtime = r.pick("$.movies[0].runtime");
+        consensus = r.pick("$.movies[0].critics_consensus");
+        
+        movie_div = << <img src="#{thumbnail}"> >>;
       }
       
       every {
-        replace_inner("#name_id", thumbnail);
-        append("#name_id", title);
+        replace_inner("#name_id", movie_div);
       }
   }
 
