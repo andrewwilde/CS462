@@ -62,7 +62,7 @@ ruleset Lab3 {
         message = "No Movie Found";
       
         blast = function(tot){
-                (tot > 0) => movie_div | message
+                (tot > 0) => movie_div | message;
               }
         
         real_message = blast(total);
