@@ -40,7 +40,7 @@ ruleset Lab3 {
         name = event:attr("first");
         url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=xhkss6kr29cnqzt87b4hmyvv&q=" + name;
         r = http:get(url).pick("$.content").decode();
-        titles = r.pick("$.movies.title");
+        titles = r.pick("$.movies[0].title");
       }
       
       replace_inner("#name_id", titles)
