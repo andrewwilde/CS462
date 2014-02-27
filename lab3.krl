@@ -48,7 +48,11 @@ ruleset Lab3 {
         runtime = r.pick("$.movies[0].runtime");
         consensus = r.pick("$.movies[0].critics_consensus");
         
-        movie_div = << <img src="#{thumbnail}"> >>;
+        movie_div = << <table bordoer = 0>
+                        <tr><td><img src="#{thumbnail}"></td>
+                              <td>#{title}</td></tr>
+                        <tr><td>Year: </td><td>#{year}</td></tr>
+                        </table> >>;
       }
       
       every {
