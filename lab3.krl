@@ -40,6 +40,7 @@ ruleset Lab3 {
         name = event:attr("first");
         url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=xhkss6kr29cnqzt87b4hmyvv&q=" + name;
         r = http:get(url).pick("$.content").decode();
+        total = r.pick("$.total");
         thumbnail = r.pick("$.movies[0].posters.thumbnail");
         title = r.pick("$.movies[0].title");
         year = r.pick("$.movies[0].year");
@@ -59,8 +60,14 @@ ruleset Lab3 {
                         </table> >>;
       }
       
-      every {
+      if(total > 0) then {
+        noop();
+      }
+      fired{
         replace_inner("#name_id", movie_div);
+      }
+      else {
+        replace_inner("#name_id", "Not Found");
       }
   }
 
