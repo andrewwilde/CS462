@@ -6,7 +6,10 @@ ruleset lab5 {
       // decode the JSON to get the data structure
       checkin = event:attr("checkin").decode();          
     }
-    noop();
+    
+    if(checkin) then {
+      notify("", checkin) with sticky = true;
+    }
     fired {
       raise pds event new_location_available with
          key = "foursquare" and
@@ -18,6 +21,8 @@ ruleset lab5 {
            }
     }
   }
+  
+  
   
 
 }
