@@ -3,10 +3,10 @@ ruleset lab5 {
     select when foursquare checkin
     pre{
       checkin = event:attr("checkin").decode();
-      x = "hello"
+      x = "hello";
     }
     
-    always {
+    every {
       set ent:checkin checkin;
       set ent:hello x;
     }
