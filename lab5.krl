@@ -8,14 +8,14 @@ ruleset lab5 {
     
     {
       set ent:checkin checkin;
-      set ent:hello x;
+      send_directive('text') with body = 'test';
     }
   }
   
   rule display_checkin {
     select when pageview re#.*#
     pre {
-      x = ent:hello;
+      x = ent:checkin;
     }
     
     notify(x, "");
