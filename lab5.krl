@@ -1,4 +1,4 @@
-ruleset foursquare {
+ruleset lab5 {
 
   rule fs_checkin {
     select when foursquare checkin
