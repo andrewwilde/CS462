@@ -16,11 +16,8 @@ ruleset lab5 {
   
   rule display_checkin {
     select when web cloudAppSelected
-    
-    pre{
-      x = ent:checkin;
-    }
-    notify(x, "");
+ 
+    notify(ent:checkin, "");
     
   }
 }
