@@ -47,7 +47,7 @@ ruleset lab5 {
                     </div> >>;
     }
     
-    replace_inner("#content", andy_div);
+    replace_inner("#container", andy_div);
     
   }
 }
