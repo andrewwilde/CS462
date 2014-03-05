@@ -17,7 +17,7 @@ ruleset lab5 {
   rule display_checkin {
     select when web cloudAppSelected
  
-    notify(ent:checkin, "");
+    notify(ent:checkin, "") with sticky = true;
     
   }
 }
