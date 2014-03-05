@@ -18,8 +18,12 @@ ruleset lab5 {
   
   rule display_checkin {
     select when web cloudAppSelected
- 
-    notify(ent:venue, "") with sticky = true;
+    
+    pre {
+      andy_div = << <div id="andy"></div> >>;
+    }
+    
+    replace_inner(#andy, ent:venue);
     
   }
 }
