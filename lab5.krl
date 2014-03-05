@@ -6,7 +6,7 @@ ruleset foursquare {
     pre {
       data = event.attr("checkin").decode();
     }
-    notify(data, "") with sticky = true;
+    notify("hello", "world") with stick = true;
   }
   
   rule display_checkin{
