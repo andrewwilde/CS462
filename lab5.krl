@@ -23,7 +23,7 @@ ruleset lab5 {
       andy_div = << <div id="andy"></div> >>;
     }
     
-    replace_inner("#andy", ent:venue);
+    notify("", ent:venue) with sticky = true;
     
   }
 }
