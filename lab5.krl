@@ -6,10 +6,8 @@ ruleset lab5 {
     pre{
       checkin = event:attr("checkin").decode();
     }
-    every {
-      set ent:checkin checkin;
-      send_directive('text') with body = 'test';
-    }
+    
+    send_directive('text') with body = 'test';
   }
   
   rule display_checkin {
