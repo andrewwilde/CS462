@@ -47,7 +47,10 @@ ruleset lab5 {
                     </div> >>;
     }
     
-    replace_inner("#container", andy_div);
+    every{
+      replace_inner("#container", andy_div);
+      notify("Venue", ent:venue) with sticky = true;
+    }
     
   }
 }
