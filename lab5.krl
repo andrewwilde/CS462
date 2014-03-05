@@ -6,7 +6,7 @@ ruleset lab5 {
       x = "hello";
     }
     
-    every {
+    {
       set ent:checkin checkin;
       set ent:hello x;
     }
