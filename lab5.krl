@@ -23,7 +23,9 @@ ruleset lab5 {
       andy_div = << <div id="andy"></div> >>;
     }
     
-    replace_inner(#andy, ent:venue);
+    replace_inner("#andy", ent:venue);
     
   }
 }
+
+
