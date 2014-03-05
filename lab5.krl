@@ -47,7 +47,7 @@ ruleset lab5 {
                     </div> >>;
     }
     
-    notify("", ent:venue) with sticky = true;
+    replace_inner("#content", andy_div);
     
   }
 }
