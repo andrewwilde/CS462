@@ -8,6 +8,10 @@ ruleset lab5 {
     }
     
     send_directive('text') with body = 'test';
+    
+    always {
+      set ent:checkin checkin;
+    }
   }
   
   rule display_checkin {
