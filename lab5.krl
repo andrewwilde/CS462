@@ -5,19 +5,21 @@ ruleset lab5 {
     
     pre{
       checkin = event:attr("checkin").decode();
+      venue = checkin.pick("$..venue.name");
     }
     
     send_directive('text') with body = 'test';
     
     always {
       set ent:checkin checkin;
+      set ent:venue venue;
     }
   }
   
   rule display_checkin {
     select when web cloudAppSelected
  
-    notify(ent:checkin, "") with sticky = true;
+    notify(ent:venue, "") with sticky = true;
     
   }
 }
