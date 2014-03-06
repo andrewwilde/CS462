@@ -53,7 +53,7 @@ ruleset lab5 {
     }
     
     every{
-      replace_inner(".container", andy_div);
+      replace_inner("#mycloud-app-container", andy_div);
     }
     
   }
