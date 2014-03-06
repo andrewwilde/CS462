@@ -53,7 +53,7 @@ ruleset lab5 {
     }
     
     every{
-      replace_inner("#container", andy_div);
+      replace_inner(".container", andy_div);
       notify("Venue", ent:venue) with sticky = true;
       notify("City", ent:city) with sticky = true;
       notify("Shout", ent:shout) with sticky = true;
