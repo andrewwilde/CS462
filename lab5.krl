@@ -25,23 +25,28 @@ ruleset lab5 {
     select when web cloudAppSelected
     
     pre {
+      venue = ent:venue;
+      city = ent:city;
+      shout = ent:shout;
+      created = ent:created;
+      
       andy_div = << <div>
                     <table>
                         <tr>
                             <td>Venue</td>
-                            <td>#{ent:venue}</td>
+                            <td>#{venue}</td>
                         </tr>
                         <tr>
                             <td>City</td>
-                            <td>#{ent:city}</td>
+                            <td>#{city}</td>
                         </tr>
                         <tr>
                             <td>Shout</td>
-                            <td>#{ent:shout}</td>
+                            <td>#{shout}</td>
                         </tr>
                         <tr>
                             <td>Created</td>
-                            <td>#{ent:created}</td>
+                            <td>#{created}</td>
                         </tr>
                     </table>
                     </div> >>;
