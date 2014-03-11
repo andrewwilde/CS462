@@ -2,6 +2,7 @@ ruleset lab5 {
   rule process_fs_checkin{
   
     select when foursquare checkin
+     
     
     pre{
       checkin = event:attr("checkin").decode();
@@ -18,6 +19,9 @@ ruleset lab5 {
       set ent:city city;
       set ent:shout shout;
       set ent:created created;
+      raise explicit event pds:new_location_data with
+        key = "fs_checkin" and
+        value = {"venue" : venue, "city" : city, "shout" : shout, "createdAt" : created };
     }
   }
   
