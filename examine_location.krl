@@ -15,6 +15,7 @@ ruleset examine_location {
       created = values["createdAt"];
       
       andy_div = << <div>
+                      <h3>Last Checkin</h3>
                       <table>
                         <tr>
                           <td>Venue</td>
