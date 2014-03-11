@@ -11,11 +11,16 @@ ruleset location_data {
     
       key = event:attr("key");
       value = event:attr("value");
-      map = ent:map.put(key, value);
+      map = ent:key_map || {};
+      map = map.put(key, value);
       
       get_location_data = function(k){
         map{k};
       };
+    }
+    
+    fired {
+      set ent:key_map map;
     }
     
   }
