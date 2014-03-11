@@ -15,6 +15,5 @@ ruleset location_data {
       };
       
     }
-    
   }
 }
