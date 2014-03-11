@@ -13,7 +13,10 @@ ruleset location_data {
       get_location_data = function(k){
         map{k};
       };
-      
     }
+    
   }
+  
+  
+  
 }
