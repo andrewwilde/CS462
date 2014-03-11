@@ -8,6 +8,9 @@ ruleset location_data {
     select when pds new_location_data
     
     pre{
+    
+      key = event:attr("key");
+      value = event:attr("value");
       map = ent:map.put(key, value);
       
       get_location_data = function(k){
