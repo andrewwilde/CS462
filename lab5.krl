@@ -53,7 +53,7 @@ ruleset lab5 {
                             <td>#{created}</td>
                         </tr>
                     </table>
-                    </div> >>;
+                  </div> >>;
     }
     
     every{
