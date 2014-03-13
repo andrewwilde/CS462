@@ -2,7 +2,6 @@ ruleset lab5 {
   rule process_fs_checkin{
   
     select when foursquare checkin
-     
     
     pre{
       checkin = event:attr("checkin").decode();
