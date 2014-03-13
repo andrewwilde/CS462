@@ -18,7 +18,7 @@ ruleset lab5 {
       set ent:city city;
       set ent:shout shout;
       set ent:created created;
-      raise explicit event new_location_data with
+      raise pds event new_location_data with
         key = "fs_checkin" and
         value = {"venue" : venue, "city" : city, "shout" : shout, "createdAt" : created };
     }
@@ -57,6 +57,7 @@ ruleset lab5 {
     
     every{
       replace_inner("#mycloud-app-container", andy_div);
+      notify("Sanity Check 2") with sticky = true;
     }
     
   }
