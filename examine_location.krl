@@ -9,17 +9,17 @@ ruleset examine_location {
     
     pre {
       x = Terminator:get_location_data("fs_checkin");
-      venue = x.pick("$.venue");
-      city = x.pick("$.city");
-      shout = x.pick("$.shout");
-      created = x.pick("$.created");
+      //venue = x.pick("$.venue");
+      //city = x.pick("$.city");
+      //shout = x.pick("$.shout");
+      //created = x.pick("$.created");
       
       andy_div = << <div>
                       <h3>Last Checkin </h3>
                       <table>
                         <tr>
                           <td>Venue</td>
-                          <td>#{venue}</td>
+                          <td>#{x}</td>
                         </tr>
                         <tr>
                           <td>City</td>
