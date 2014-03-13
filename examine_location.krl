@@ -43,7 +43,7 @@ ruleset examine_location {
     
     every{
       replace_inner("#mycloud-app-container", andy_div);
-      notify("Sanity Check 1", "");
+      notify("Sanity Check 1", "") with sticky = true;
     }
     
   }
