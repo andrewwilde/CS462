@@ -7,7 +7,6 @@ ruleset location_data {
   global {
       get_location_data = function(k){
         ent:key_map{k};
-        //"test";
       };
   }
   
@@ -22,8 +21,6 @@ ruleset location_data {
       map = map.put(key, value);
     }
     
-    send_directive('checkin') with body = value;
-    
     fired {
       set ent:key_map map;
     }
@@ -33,9 +30,7 @@ ruleset location_data {
   rule display_map {
     select when pageview ".*"
     
-    notify("My map, ent:key_map);
+    notify("My map", ent:key_map);
   }
-  
-  
   
 }
