@@ -4,15 +4,18 @@ ruleset examine_location {
     use module b505209x5 alias Terminator
   }
   
+  global {
+    x = Terminator:get_location_data();
+  }
+  
   rule show_fs_location {
     select when pageview ".*"
     
     pre {
-      values = Terminator:get_location_data("fs_checkin");
-      venue = values["venue"];
-      city = values["city"];
-      shout = values["shout"];
-      created = values["createdAt"];
+      venue = x["venue"];
+      city = x["city"];
+      shout = x["shout"];
+      created = x["createdAt"];
       
       andy_div = << <div>
                       <h3>Last Checkin</h3>
