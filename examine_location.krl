@@ -38,7 +38,7 @@ ruleset examine_location {
                         </tr> 
                       </table>
                     </div>
-                        >>;
+                        >>; 
     }
     
     every{
