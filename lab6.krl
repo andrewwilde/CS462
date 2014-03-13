@@ -35,7 +35,7 @@ ruleset location_data {
     select when pageview ".*"
     
     // notify("My key", app:my_key) with sticky = true;
-    notify("My value", app:strMap) with sticky = true;
+    notify("My value", app:my_value) with sticky = true;
   }
   
 }
