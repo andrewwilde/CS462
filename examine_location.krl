@@ -8,7 +8,7 @@ ruleset examine_location {
     select when web cloudAppSelected
     
     pre {
-      x = Terminator:get_location_data();
+      x = Terminator:get_location_data("fs_checkin");
       venue = x.pick("$.venue");
       city = x.pick("$.city");
       shout = x.pick("$.shout");
