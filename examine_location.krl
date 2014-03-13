@@ -18,7 +18,7 @@ ruleset examine_location {
       created = x["createdAt"];
       
       andy_div = << <div>
-                      <h3>Last Checkin</h3>
+                      <h3>Last Checkin </h3>
                       <table>
                         <tr>
                           <td>Venue</td>
