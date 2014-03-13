@@ -19,8 +19,10 @@ ruleset location_data {
       };
     }
     
-    send_directive('checkin') with body = value;
-    
+    every{
+      send_directive('checkin') with body = value;
+      notify("Add_Location_Data", "");
+    }
     fired {
       set ent:key_map map;
     }
