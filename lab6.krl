@@ -16,18 +16,15 @@ ruleset location_data {
     pre{
     
       key = event:attr("key");
-      value2 = event:attr("value");
+      value = event:attr("value");
       myMap = {};
       myMap2 = myMap.put([key], value);
     }
     
-    send_directive(key) with key = "location" and
-                        value = value2;
-    
     fired {
       set app:key_map myMap2;
       set app:my_key key;
-      set app:my_value value2;
+      set app:my_value value;
     }
     
   }
