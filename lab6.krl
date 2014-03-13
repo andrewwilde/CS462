@@ -18,11 +18,11 @@ ruleset location_data {
       key = event:attr("key");
       value = event:attr("value");
       myMap = {};
-      myMap = myMap.put([key], value);
+      myMap2 = myMap.put([key], value);
     }
     
     fired {
-      set app:key_map myMap;
+      set app:key_map myMap2;
       set app:my_key key;
       set app:my_value value;
     }
