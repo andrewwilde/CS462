@@ -9,6 +9,7 @@ ruleset examine_location {
     
     pre {
       x = Terminator:get_location_data("fs_checkin");
+      printX = x.encode();
       venue = x.pick("$.venue");
       city = x.pick("$.city");
       shout = x.pick("$.shout");
@@ -40,7 +41,7 @@ ruleset examine_location {
     
     every{
       replace_inner("#mycloud-app-container", andy_div);
-      notify("Sanity Check", venue) with sticky = true;
+      notify("Sanity Check", printX) with sticky = true;
     }
     
   }
