@@ -36,7 +36,7 @@ ruleset examine_location {
                           <td>Created At</td>
                           <td>#{created}</td>
                         </tr>
-                      </table>
+                      </table> 
                     </div>
                         >>; 
     }
