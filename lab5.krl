@@ -13,7 +13,8 @@ ruleset lab5 {
       
     }
     
-    send_directive('checkin') with body = 'test';
+    send_directive(venue) with key = "checkin" and
+                                value = venue;
     
     always {
       set ent:venue venue;
