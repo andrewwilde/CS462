@@ -21,7 +21,7 @@ ruleset lab5 {
       
       raise pds event new_location_data with
         key = "fs_checkin" and
-        value = {"venue" : venue, "city" : city, "shout" : shout, "createdAt" : created };
+        value = {"venue" : ent:venue, "city" : ent:city, "shout" : ent:shout, "createdAt" : ent:created };
     }
   }
   
