@@ -12,7 +12,7 @@ ruleset lab5 {
       created = checkin.pick("$..createdAt");
     }
     
-    send_directive('text') with body = 'test';
+    send_directive('checkin') with body = 'test';
     
     always {
       set ent:venue venue;
