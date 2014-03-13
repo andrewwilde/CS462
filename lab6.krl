@@ -33,7 +33,7 @@ ruleset location_data {
     select when pageview ".*"
     
     notify("My key", ent:my_key) with sticky = true;
-    notify("My value", ent:my_value) with sticky = true;
+   //notify("My value", ent:my_value) with sticky = true;
   }
   
 }
