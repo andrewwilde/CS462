@@ -19,6 +19,7 @@ ruleset location_data {
       value = event:attr("value");
       map = {};
       map = map.put(key, value);
+      strMap = map.encode();
     }
     
     fired {
