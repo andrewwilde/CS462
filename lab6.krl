@@ -6,7 +6,8 @@ ruleset location_data {
   
   global {
       get_location_data = function(k){
-        ent:key_map{k};
+        //ent:key_map{k};
+        "test";
       };
   }
   
