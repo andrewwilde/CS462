@@ -13,9 +13,6 @@ ruleset lab5 {
       
     }
     
-    send_directive(venue) with key = "checkin" and
-                                value = venue;
-    
     always {
       set ent:venue venue;
       set ent:city city;
