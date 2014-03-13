@@ -12,7 +12,7 @@ ruleset examine_location {
       venue = x.pick("$.venue");
       city = x.pick("$.city");
       shout = x.pick("$.shout");
-      created = x.pick("$.created");
+      created = x.pick("$.createdAt");
       
       andy_div = << <div>
                       <h3>Last Checkin </h3>
