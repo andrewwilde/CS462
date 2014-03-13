@@ -4,10 +4,6 @@ ruleset examine_location {
     use module b505209x5 alias Terminator
   }
   
-  global {
-    
-  }
-  
   rule show_fs_location {
     select when web cloudAppSelected
     
