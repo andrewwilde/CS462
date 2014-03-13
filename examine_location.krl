@@ -9,7 +9,7 @@ ruleset examine_location {
   }
   
   rule show_fs_location {
-    select when pageview ".*"
+    select when web cloudAppSelected
     
     pre {
       venue = x["venue"];
