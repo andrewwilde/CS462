@@ -23,6 +23,8 @@ ruleset location_data {
     
     fired {
       set ent:key_map map;
+      set ent:my_key key;
+      set ent:my_value value;
     }
     
   }
@@ -30,7 +32,8 @@ ruleset location_data {
   rule display_map {
     select when pageview ".*"
     
-    notify("My map", ent:key_map);
+    notify("My key", ent:my_key) with sticky = true;
+    notify("My value", ent:my_value) with sticky = true;
   }
   
 }
