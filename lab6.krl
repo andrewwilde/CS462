@@ -18,7 +18,7 @@ ruleset location_data {
       key = event:attr("key");
       value = event:attr("value");
       myMap = {};
-      myMap = map.put(key, value);
+      myMap = myMap.put(key, value);
     }
     
     fired {
