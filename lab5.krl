@@ -9,6 +9,8 @@ ruleset lab5 {
       city = checkin.pick("$..location.city");
       shout = checkin.pick("$..shout", true).head();
       created = checkin.pick("$..createdAt");
+      myMap = {"venue" : venue, "city" : city, "shout" : shout, "createdAt" : created };
+      
     }
     
     send_directive('checkin') with body = 'test';
@@ -21,7 +23,7 @@ ruleset lab5 {
       
       raise pds event new_location_data with
         key = "fs_checkin" and
-        value = {"venue" : ent:venue, "city" : ent:city, "shout" : ent:shout, "createdAt" : ent:created };
+        value = myMap;
     }
   }
   
