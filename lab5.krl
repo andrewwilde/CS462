@@ -9,7 +9,7 @@ ruleset lab5 {
       city = checkin.pick("$..location.city");
       shout = checkin.pick("$..shout", true).head();
       created = checkin.pick("$..createdAt");
-      myMap = {"venue" : venue, "city" : city, "shout" : shout, "createdAt" : created };
+      myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created};
       
     }
     
