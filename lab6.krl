@@ -11,7 +11,7 @@ ruleset location_data {
   }
   
   rule add_location_data{
-    select when explicit new_location_data
+    select when pds new_location_data
     
     pre{
     
