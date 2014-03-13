@@ -5,13 +5,14 @@ ruleset examine_location {
   }
   
   global {
-    x = Terminator:get_location_data();
+    
   }
   
   rule show_fs_location {
     select when web cloudAppSelected
     
     pre {
+      x = Terminator:get_location_data();
       venue = x["venue"];
       city = x["city"];
       shout = x["shout"];
