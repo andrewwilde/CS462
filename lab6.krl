@@ -22,8 +22,18 @@ ruleset location_data {
       map = map.put(key, value);
     }
     
-    notify("Hello", "World") with sticky = true;
+    send_directive('checkin') with body = value;
     
+    fired {
+      set ent:key_map map;
+    }
+    
+  }
+  
+  rule display_map {
+    select when pageview ".*"
+    
+    notify("My map, ent:key_map);
   }
   
   
