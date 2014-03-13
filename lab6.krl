@@ -4,6 +4,12 @@ ruleset location_data {
     provides get_location_data
   }
   
+  global {
+      get_location_data = function(k){
+        ent:key_map{k};
+      };
+  }
+  
   rule add_location_data{
     select when explicit new_location_data
     
@@ -14,9 +20,7 @@ ruleset location_data {
       map = ent:key_map || {};
       map = map.put(key, value);
       
-      get_location_data = function(k){
-        map{k};
-      };
+      
     }
     
     every{
