@@ -19,8 +19,6 @@ ruleset location_data {
       value = event:attr("value");
       map = ent:key_map || {};
       map = map.put(key, value);
-      
-      
     }
     
     every{
