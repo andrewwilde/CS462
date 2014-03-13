@@ -19,7 +19,7 @@ ruleset examine_location {
                       <table>
                         <tr>
                           <td>Venue</td>
-                          <td>#{x}</td>
+                          <td>#{venue}</td>
                         </tr>
                         <tr>
                           <td>City</td>
@@ -40,7 +40,7 @@ ruleset examine_location {
     
     every{
       replace_inner("#mycloud-app-container", andy_div);
-      notify("Sanity Check 1", x) with sticky = true;
+      notify("Sanity Check 1", venue) with sticky = true;
     }
     
   }
