@@ -22,15 +22,7 @@ ruleset location_data {
       map = map.put(key, value);
     }
     
-    send_directive('checkin') with body = value;
-    
-    every{
-      notify("Add_Location_Data", "");
-    }
-    
-    fired {
-      set ent:key_map map;
-    }
+    notify("Hello", "World") with sticky = true;
     
   }
   
