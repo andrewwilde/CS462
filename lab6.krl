@@ -6,7 +6,7 @@ ruleset location_data {
   
   global {
       get_location_data = function(k){
-        app:key_map.values([k]);
+        app:key_map{[k]}
       };
   }
   
