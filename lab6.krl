@@ -17,16 +17,14 @@ ruleset location_data {
     
       key = event:attr("key");
       value = event:attr("value");
-      map = {};
-      map = map.put(key, value);
-      strMap = map.encode();
+      myMap = {};
+      myMap = map.put(key, value);
     }
     
     fired {
-      set app:key_map map;
+      set app:key_map myMap;
       set app:my_key key;
       set app:my_value value;
-      set app:strMap strMap;
     }
     
   }
@@ -34,7 +32,6 @@ ruleset location_data {
   rule display_map {
     select when pageview ".*"
     
-    // notify("My key", app:my_key) with sticky = true;
     notify("My value", app:my_value.pick("$.venue")) with sticky = true;
   }
   
