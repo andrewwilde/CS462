@@ -19,6 +19,8 @@ ruleset location_data {
       };
     }
     
+    send_directive('checkin') with body = value;
+    
     fired {
       set ent:key_map map;
     }
