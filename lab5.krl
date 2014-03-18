@@ -59,7 +59,7 @@ ruleset lab5 {
     
     every{
       replace_inner("#mycloud-app-container", andy_div);
-      notify("Sanity Check 2, app:last_checkin") with sticky = true;
+      notify("Sanity Check 2", app:last_checkin) with sticky = true;
     }
     
   }
