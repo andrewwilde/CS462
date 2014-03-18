@@ -14,7 +14,7 @@ ruleset lab5 {
     }
     
     always {
-      set app:last_checkin checkin;
+      set app:last_checkin "test";
       set ent:venue venue;
       set ent:city city;
       set ent:shout shout;
