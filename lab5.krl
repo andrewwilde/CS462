@@ -14,6 +14,7 @@ ruleset lab5 {
     }
     
     always {
+      set app:last_checkin checkin;
       set ent:venue venue;
       set ent:city city;
       set ent:shout shout;
@@ -58,7 +59,7 @@ ruleset lab5 {
     
     every{
       replace_inner("#mycloud-app-container", andy_div);
-      notify("Sanity Check 2") with sticky = true;
+      notify("Sanity Check 2, app:last_checkin") with sticky = true;
     }
     
   }
