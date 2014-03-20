@@ -13,7 +13,7 @@ ruleset lab5 {
       
     }
     
-    always {
+    every {
       set ent:venue venue;
       set ent:city city;
       set ent:shout shout;
