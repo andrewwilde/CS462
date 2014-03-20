@@ -7,6 +7,8 @@ ruleset lab5 {
       checkin = event:attr("checkin").decode();
       venue = checkin.pick("$..venue.name");
       city = checkin.pick("$..location.city");
+      latitude = checkin.pick("$..location.latitude");
+      longitude = checkin.pick("$..location.latitude");
       shout = checkin.pick("$..shout", true).head();
       created = checkin.pick("$..createdAt");
       myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created};
@@ -34,6 +36,8 @@ ruleset lab5 {
       city = ent:my_city;
       shout = ent:my_shout;
       created = ent:my_created;
+      latitude = ent:latitude;
+      longitude = ent:longitude;
       
       andy_div = << <div>
                     <table>
@@ -52,6 +56,14 @@ ruleset lab5 {
                         <tr>
                             <td>Created</td>
                             <td>#{created}</td>
+                        </tr>
+                        <tr>
+                            <td>Latitude</td>
+                            <td>#{latitude}</td>
+                        </tr>
+                        <tr>
+                            <td>Longitude</td>
+                            <td>#{longitude}</td>
                         </tr>
                     </table>
                   </div> >>;
