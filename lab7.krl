@@ -44,6 +44,8 @@ ruleset lab7 {
   rule test{
     select when pageview ".*"
     
-    notify("Test", ent:test);
+    every{
+      notify("Test", ent:test);
+      notify("Distance", ent:distance);
   }
 }
