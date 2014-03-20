@@ -14,6 +14,8 @@ ruleset examine_location {
       city = x.pick("$.city");
       shout = x.pick("$.shout");
       created = x.pick("$.createdAt");
+      latitude = x.pick("$.latitude");
+      longitude = x.pick("$.longitude");
       
       andy_div = << <div>
                       <h3>Last Checkin </h3>
@@ -33,6 +35,14 @@ ruleset examine_location {
                         <tr>
                           <td>Created At</td>
                           <td>#{created}</td>
+                        </tr>
+                        <tr>
+                          <td>Latitude</td>
+                          <td>#{latitude}</td>
+                        </tr>
+                        <tr>
+                          <td>Longitude</td>
+                          <td>#{longitude}</td>
                         </tr>
                       </table> 
                     </div>
