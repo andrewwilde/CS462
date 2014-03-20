@@ -25,9 +25,9 @@ ruleset lab7 {
       d = math:round(dE);
     }
     
-    if (d < 100) then {
+    //if (d < 100) then {
       send_directive('nearby') with body = "In the nearby rule";
-    }
+    //}
     
     fired{
       raise pds event location_nearby with 
