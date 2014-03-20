@@ -5,7 +5,7 @@ ruleset lab7 {
   }
 
   rule nearby {
-    select when pageview ".*"
+    select when location curr
     
     pre {
       x = Terminator:get_location_data("fs_checkin");
@@ -24,9 +24,11 @@ ruleset lab7 {
       dE = math:great_circle_distance(rlnga,r90 - rlata, rlngb,r90 - rlatb, rEk);
     }
     
-    if (dE < 100) then {
+    //if (dE < 100) then {
+    {  
       send_directive('nearby') with body = "In the nearby rule";
     }
+    //}
     fired{
       raise pds event location_nearby with 
         key = "distance" and
