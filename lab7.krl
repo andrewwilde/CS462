@@ -29,11 +29,13 @@ ruleset lab7 {
     }
     fired{
       set ent:distance dE;
+      set ent:test "test";
       raise explicit event location_nearby 
         with distance = dE;
     }
     else{
       set ent:distance dE;
+      set ent:test "test";
       raise explicit event location_far 
         with distance = dE;
     }
@@ -42,6 +44,6 @@ ruleset lab7 {
   rule test{
     select when pageview ".*"
     
-    notify("Distance", ent:distance);
+    notify("Test", ent:test);
   }
 }
