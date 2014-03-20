@@ -28,13 +28,11 @@ ruleset lab7 {
       notify("Distance", dE) with sticky = true;
     }
     fired{
-      set ent:distance dE;
       set ent:test "Fired";
       raise explicit event location_nearby 
         with distance = dE;
     }
     else{
-      set ent:distance dE;
       set ent:test "Not Fired";
       raise explicit event location_far 
         with distance = dE;
@@ -46,7 +44,6 @@ ruleset lab7 {
     
     every{
       notify("Test", ent:test);
-      notify("Distance", ent:distance);
     }
   }
 }
