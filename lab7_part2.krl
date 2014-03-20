@@ -25,4 +25,5 @@ ruleset lab7_part2{
     select when pageview ".*"
     
     notify("Distance", ent:distance);
+  }
 }
