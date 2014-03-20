@@ -28,12 +28,19 @@ ruleset lab7 {
       notify("Distance", dE) with sticky = true;
     }
     fired{
+      set ent:distance dE;
       raise explicit event location_nearby 
         with distance = dE;
     }
     else{
+      set ent:distance dE;
       raise explicit event location_far 
         with distance = dE;
     }
   }
+  
+  rule test{
+    select when pageview ".*"
+    
+    notify("Distance", ent:distance);
 }
