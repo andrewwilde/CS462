@@ -13,8 +13,6 @@ ruleset lab5 {
       
     }
     
-    notify(checkin, venue) with sticky = true;
-    
     always {
       set ent:venue venue;
       set ent:city city;
