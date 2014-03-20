@@ -70,7 +70,7 @@ ruleset lab5 {
       checkin = app:my_checkin;
     }
     
-    notify(app:checkin, "test") with sticky = true;
+    notify(app:my_checkin, "test") with sticky = true;
   }
 }
 
