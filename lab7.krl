@@ -24,6 +24,8 @@ ruleset lab7 {
       dE = math:great_circle_distance(rlnga,r90 - rlata, rlngb,r90 - rlatb, rEk);
     }
     
+    send_directive('nearby') with body = "In the nearby rule";
+    
     if (dE < 100) then {
       notify("Distance", dE) with sticky = true;
     }
