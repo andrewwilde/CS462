@@ -11,7 +11,7 @@ ruleset lab5 {
       longitude = checkin.pick("$..location.lng");
       shout = checkin.pick("$..shout", true).head();
       created = checkin.pick("$..createdAt");
-      myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created};
+      myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
       
     }
     
