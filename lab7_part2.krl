@@ -30,6 +30,10 @@ ruleset lab7_part2{
   rule test{
     select when pageview ".*"
     
-    notify("Distance", ent:distance);
+    pre{
+      distance = ent:distance;
+    }
+    
+    notify("Distance", distance);
   }
 }
