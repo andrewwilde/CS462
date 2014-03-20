@@ -25,7 +25,7 @@ ruleset lab7 {
       d = math:round(dE);
     }
     
-    if (d < 1000) then {
+    if (d < 100) then {
       send_directive('nearby') with body = "In the nearby rule";
     }
     
