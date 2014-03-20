@@ -27,7 +27,7 @@ ruleset lab7 {
     send_directive('nearby') with body = "In the nearby rule";
     
     if (dE < 100) then {
-      notify("Distance", dE) with sticky = true;
+      noop();
     }
     fired{
       raise pds event location_nearby with 
