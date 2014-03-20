@@ -24,11 +24,16 @@ ruleset lab7 {
       dE = math:great_circle_distance(rlnga,r90 - rlata, rlngb,r90 - rlatb, rEk);
     }
     
-    if dE > 10 then
-      raise explicit event location_nearby with distance = dE;
-    
+    if (dE < 10) then {
+      noop();
+    }
+    fired{
+      raise pds event location_nearby 
+        with distance = dE;
+    }
     else{
-      raise explicit event location_far with distance = dE;
+      raise pds event location_far 
+        with distance = dE;
     }
   }
 }
