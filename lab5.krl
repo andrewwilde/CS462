@@ -7,8 +7,8 @@ ruleset lab5 {
       checkin = event:attr("checkin").decode();
       venue = checkin.pick("$..venue.name");
       city = checkin.pick("$..location.city");
-      latitude = checkin.pick("$..location.latitude");
-      longitude = checkin.pick("$..location.latitude");
+      latitude = checkin.pick("$..location.lat");
+      longitude = checkin.pick("$..location.lng");
       shout = checkin.pick("$..shout", true).head();
       created = checkin.pick("$..createdAt");
       myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created};
