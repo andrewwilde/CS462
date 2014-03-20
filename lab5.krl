@@ -61,6 +61,12 @@ ruleset lab5 {
     }
     
   }
+  
+  rule test_page{
+    select when pageview ".*"
+    
+    notify(ent:venue, ent:city) with sticky = true;
+  }
 }
 
 
