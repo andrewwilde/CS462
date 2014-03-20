@@ -12,7 +12,7 @@ ruleset lab7_part2{
   
   
   rule nearby_event{
-    select when location nearby
+    select when location_nearby
     
     twilio:send_sms(event:attr("8013102683"), event:attr("3852194420"), "Location " + distance + "kilometers away");
     
