@@ -18,9 +18,11 @@ ruleset lab7_part2{
       distance = event:attr("value");
     }
     
-    send_directive('nearby_event') with body = "Texting";
-    
-    twilio:send_sms("(801) 310-2683", "(385) 219-4420", distance);
+    {
+   
+      send_directive('nearby_event') with body = "Texting";
+      twilio:send_sms("(801) 310-2683", "(385) 219-4420", distance);
+    }  
     
     always {
       set ent:distance distance;
