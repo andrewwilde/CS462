@@ -25,14 +25,14 @@ ruleset lab7 {
     }
     
     if (dE < 100) then {
-      noop();
+      notify("Distance", dE) with sticky = true;
     }
     fired{
-      raise pds event location_nearby 
+      raise explicit event location_nearby 
         with distance = dE;
     }
     else{
-      raise pds event location_far 
+      raise explicit event location_far 
         with distance = dE;
     }
   }
