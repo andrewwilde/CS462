@@ -12,9 +12,13 @@ ruleset lab7_part2{
   
   
   rule nearby_event{
-    select when pageview ".*"
+    select when location nearby
     
-    twilio:send_sms("(801) 310-2683", "(385) 219-4420", "Testing");
+    pre {
+      distance = event_attr("distance");
+    }
+    
+    twilio:send_sms("(801) 310-2683", "(385) 219-4420", distance);
     
     always {
       set ent:distance distance;
