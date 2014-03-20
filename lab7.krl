@@ -43,4 +43,5 @@ ruleset lab7 {
     select when pageview ".*"
     
     notify("Distance", ent:distance);
+  }
 }
