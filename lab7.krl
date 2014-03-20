@@ -22,9 +22,10 @@ ruleset lab7 {
       rlatb = math:deg2rad(latitude);
       rlngb = math:deg2rad(longitude);
       dE = math:great_circle_distance(rlnga,r90 - rlata, rlngb,r90 - rlatb, rEk);
+      d = math:round(dE);
     }
     
-    if (dE < 100) then {
+    if (dE < 100.0) then {
       send_directive('nearby') with body = "In the nearby rule";
     }
     
