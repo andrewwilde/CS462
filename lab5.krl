@@ -13,11 +13,11 @@ ruleset lab5 {
       
     }
     
-    every {
-      set ent:venue venue;
-      set ent:city city;
-      set ent:shout shout;
-      set ent:created created;
+    always {
+      set ent:my_venue venue;
+      set ent:my_city city;
+      set ent:my_shout shout;
+      set ent:my_created created;
       
       raise pds event new_location_data with
         key = "fs_checkin" and
@@ -29,10 +29,10 @@ ruleset lab5 {
     select when web cloudAppSelected
     
     pre {
-      venue = ent:venue;
-      city = ent:city;
-      shout = ent:shout;
-      created = ent:created;
+      venue = ent:my_venue;
+      city = ent:my_city;
+      shout = ent:my_shout;
+      created = ent:my_created;
       
       andy_div = << <div>
                     <table>
@@ -65,7 +65,7 @@ ruleset lab5 {
   rule test_page{
     select when pageview ".*"
     
-    notify(ent:venue, ent:city) with sticky = true;
+    notify(ent:my_venue, ent:my_city) with sticky = true;
   }
 }
 
