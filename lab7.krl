@@ -47,5 +47,6 @@ ruleset lab7 {
     every{
       notify("Test", ent:test);
       notify("Distance", ent:distance);
+    }
   }
 }
