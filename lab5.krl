@@ -37,8 +37,8 @@ ruleset lab5 {
       city = ent:my_city;
       shout = ent:my_shout;
       created = ent:my_created;
-      latitude = ent:latitude;
-      longitude = ent:longitude;
+      latitude = ent:lat;
+      longitude = ent:lng;
       
       andy_div = << <div>
                     <table>
