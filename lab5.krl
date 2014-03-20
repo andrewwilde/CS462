@@ -20,7 +20,8 @@ ruleset lab5 {
       set ent:my_city city;
       set ent:my_shout shout;
       set ent:my_created created;
-      set app:my_checkin checkin;
+      set ent:my_lat latitude;
+      set ent:my_lng longitude;
       
       raise pds event new_location_data with
         key = "fs_checkin" and
@@ -75,15 +76,6 @@ ruleset lab5 {
     
   }
   
-  rule test_page{
-    select when pageview ".*"
-    
-    pre {
-      checkin = app:my_checkin;
-    }
-    
-    notify(checkin, "test") with sticky = true;
-  }
 }
 
 
