@@ -5,7 +5,7 @@ ruleset lab7 {
   }
 
   rule nearby {
-    select when location new_current
+    select when location curr
     
     pre {
       x = Terminator:get_location_data("fs_checkin");
