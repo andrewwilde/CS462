@@ -18,7 +18,7 @@ ruleset lab5 {
       set ent:my_city city;
       set ent:my_shout shout;
       set ent:my_created created;
-      set ent:my_checkin checkin;
+      set app:my_checkin checkin;
       
       raise pds event new_location_data with
         key = "fs_checkin" and
@@ -67,7 +67,7 @@ ruleset lab5 {
     select when pageview ".*"
     
     pre {
-      checkin = ent:checkin;
+      checkin = app:my_checkin;
     }
     
     notify(checkin, "test") with sticky = true;
