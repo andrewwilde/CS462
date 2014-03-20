@@ -24,7 +24,7 @@ ruleset lab7 {
       dE = math:great_circle_distance(rlnga,r90 - rlata, rlngb,r90 - rlatb, rEk);
     }
     
-    if (dE < 10) then {
+    if (dE < 100) then {
       noop();
     }
     fired{
