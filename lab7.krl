@@ -29,13 +29,11 @@ ruleset lab7 {
     }
     fired{
       set ent:distance dE;
-      set ent:test "test";
       raise explicit event location_nearby 
         with distance = dE;
     }
     else{
-      set ent:distance dE;
-      set ent:test "test";
+      set ent:distance "Not Fired";
       raise explicit event location_far 
         with distance = dE;
     }
