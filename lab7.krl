@@ -28,11 +28,11 @@ ruleset lab7 {
       notify("Distance", dE) with sticky = true;
     }
     fired{
-      raise explicit event location nearby 
+      raise explicit event location_nearby 
         with distance = dE;
     }
     else{
-      raise explicit event location far 
+      raise explicit event location_far 
         with distance = dE;
     }
   }
