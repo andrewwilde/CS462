@@ -16,5 +16,13 @@ ruleset lab7_part2{
     
     twilio:send_sms(event:attr("8013102683"), event:attr("3852194420"), "Location " + distance + "kilometers away");
     
+    always {
+      set ent:distance distance;
+    }
   }
+  
+  rule test{
+    select when pageview ".*"
+    
+    notify("Distance", distance);
 }
