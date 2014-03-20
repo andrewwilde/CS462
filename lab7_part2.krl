@@ -14,7 +14,7 @@ ruleset lab7_part2{
   rule nearby_event{
     select when pageview ".*"
     
-    twilio:send_sms(event:attr("8013102683"), event:attr("3852194420"), "Location " + distance + "kilometers away");
+    twilio:send_sms(event:attr("8013102683"), event:attr("3852194420"), "Testing");
     
     always {
       set ent:distance distance;
