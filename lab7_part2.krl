@@ -12,7 +12,7 @@ ruleset lab7_part2{
   
   
   rule nearby_event{
-    select when explicit location_nearby
+    select when pds location_nearby
     
     pre {
       distance = event:attr("distance");
