@@ -30,13 +30,17 @@ ruleset lab7 {
       notify("Distance", dE) with sticky = true;
     }
     fired{
-      raise pds event location_nearby 
-        with distance = dE;
+      raise pds event location_nearby with 
+        key = "distance" and
+        value = dE;
+        
       set ent:test "Fired";
     }
     else{
-      raise pds event location_far 
-        with distance = dE;
+      raise pds event location_far with 
+        key = "distance" and
+        value = dE;
+        
       set ent:test "Not Fired";
     }
   }
