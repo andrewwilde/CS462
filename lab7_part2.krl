@@ -15,7 +15,7 @@ ruleset lab7_part2{
     select when location_nearby
     
     pre {
-      distance = event_attr("distance");
+      distance = event:attr("distance");
     }
     
     twilio:send_sms("(801) 310-2683", "(385) 219-4420", distance);
