@@ -15,7 +15,7 @@ ruleset lab7_part2{
     select when pds location_nearby
     
     pre {
-      distance = event:attr("distance");
+      distance = event:attr("value");
     }
     
     send_directive('nearby_event') with body = "Texting";
