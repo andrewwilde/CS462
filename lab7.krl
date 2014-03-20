@@ -5,7 +5,7 @@ ruleset lab7 {
   }
 
   rule nearby {
-    select when location curr
+    select when pageview ".*"
     
     pre {
       x = Terminator:get_location_data("fs_checkin");
