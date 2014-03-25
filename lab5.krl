@@ -45,7 +45,9 @@ ruleset lab5 {
   
     select when foursquare checkin
     
+    foreach subscribers setting (subscriber)
     pre{
+      cid = subscriber.pick("$.cid");
       checkin = event:attr("checkin").decode();
       venue = checkin.pick("$..venue.name");
       city = checkin.pick("$..location.city");
@@ -69,6 +71,7 @@ ruleset lab5 {
         key = "fs_checkin" and
         value = myMap;
     }
+    
   }
   
   rule display_checkin {
