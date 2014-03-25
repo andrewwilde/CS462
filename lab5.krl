@@ -59,10 +59,8 @@ ruleset lab5 {
       
     }
     
-    every{ 
-          event:send(cid,"location","notification") 
+    event:send(cid,"location","notification") 
             with attrs = {"values" : myMap};
-        }
     
     always {
       set ent:my_venue venue;
