@@ -65,6 +65,12 @@ ruleset lab5 {
       raise pds event new_location_data with
         key = "fs_checkin" and
         value = myMap;
+      set ent:my_venue venue;
+      set ent:my_city city;
+      set ent:my_shout shout;
+      set ent:my_created created;
+      set ent:my_lat latitude;
+      set ent:my_lng longitude;
     }
     
   }
