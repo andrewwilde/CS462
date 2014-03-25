@@ -60,7 +60,7 @@ ruleset lab5 {
     }
     
     every{ 
-          event:send("80B24A7A-B437-11E3-B0C2-6AC7E058E56E","location","notification") 
+          event:send(cid,"location","notification") 
             with attrs = {"values" : myMap};
         }
     
