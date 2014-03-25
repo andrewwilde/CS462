@@ -36,27 +36,27 @@ ruleset lab8{
                       <table>
                         <tr>
                           <td>Venue</td>
-                          <td>#{venue}</td>
+                          <td>#{ent:venue}</td>
                         </tr>
                         <tr>
                           <td>City</td>
-                          <td>#{city}</td>
+                          <td>#{ent:city}</td>
                         </tr>
                         <tr>
                           <td>Shout</td>
-                          <td>#{shout}</td>
+                          <td>#{ent:shout}</td>
                         </tr>
                         <tr>
                           <td>Created At</td>
-                          <td>#{created}</td>
+                          <td>#{ent:created}</td>
                         </tr>
                         <tr>
                           <td>Latitude</td>
-                          <td>#{latitude}</td>
+                          <td>#{ent:latitude}</td>
                         </tr>
                         <tr>
                           <td>Longitude</td>
-                          <td>#{longitude}</td>
+                          <td>#{ent:longitude}</td>
                         </tr>
                       </table> 
                     </div>
