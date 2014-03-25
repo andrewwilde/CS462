@@ -10,7 +10,7 @@ ruleset lab5 {
   }
 
 
-  rule dispatch {
+  rule dispatcher {
     select when foursquare checkin
     
     foreach subscribers setting (subscriber)
