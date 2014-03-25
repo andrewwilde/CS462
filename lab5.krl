@@ -31,13 +31,13 @@ ruleset lab5 {
         }
         
         always{
-          set ent:checkin checkin;
-          set ent:venue venue;
-          set ent:city city;
-          set ent:latitude latitude;
-          set ent:longitude longitude;
-          set ent:shout shout;
-          set ent:created created;
+          set ent:my_checkin checkin;
+          set ent:my_venue venue;
+          set ent:my_city city;
+          set ent:my_latitude latitude;
+          set ent:my_longitude longitude;
+          set ent:my_shout shout;
+          set ent:my_created created;
         }
   }
 
