@@ -28,7 +28,7 @@ ruleset lab8{
   
   rule show_location{
   
-    select when web cloudAppSelected
+    select when pageview ".*"
   
     pre{
       andy_div = << <div>
