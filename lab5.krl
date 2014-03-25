@@ -29,6 +29,16 @@ ruleset lab5 {
           event:send("80B24A7A-B437-11E3-B0C2-6AC7E058E56E","location","notification") 
             with attrs = {"values" : myMap};
         }
+        
+        always{
+          set ent:checkin checkin;
+          set ent:venue venue;
+          set ent:city city;
+          set ent:latitude latitude;
+          set ent:longitude longitude;
+          set ent:shout shout;
+          set ent:created created;
+        }
   }
 
   rule process_fs_checkin{
