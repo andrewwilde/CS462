@@ -59,6 +59,11 @@ ruleset lab5 {
       
     }
     
+    every{ 
+          event:send("80B24A7A-B437-11E3-B0C2-6AC7E058E56E","location","notification") 
+            with attrs = {"values" : myMap};
+        }
+    
     always {
       set ent:my_venue venue;
       set ent:my_city city;
