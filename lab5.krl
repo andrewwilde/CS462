@@ -12,7 +12,7 @@ ruleset lab5 {
 
   rule dispatch {
     select when foursquare checkin
-      foreach subscribers setting (subscriber)
+      //foreach subscribers setting (subscriber)
         pre {
           cid = subscriber.pick("$.cid");
           checkin = event:attr("checkin").decode();
