@@ -58,9 +58,6 @@ ruleset lab5 {
       
     }
     
-    event:send(cid,"location","notification") 
-            with attrs = {"values" : myMap};
-    
     always {
       raise pds event new_location_data with
         key = "fs_checkin" and
