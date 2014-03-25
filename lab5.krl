@@ -25,9 +25,10 @@ ruleset lab5 {
           myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
         }
         
-        event:send(cid,"location","notification") 
-          with attrs = {"values" : myMap};
-      
+        every{ 
+          event:send(cid,"location","notification") 
+            with attrs = {"values" : myMap};
+        }
   }
 
   rule process_fs_checkin{
