@@ -2,8 +2,10 @@ ruleset lab5 {
 
   global{
   
-    subscribers = { "cid":"80B24A7A-B437-11E3-B0C2-6AC7E058E56E", 
-                          "cid":"34E7385C-B438-11E3-9386-6AC7E058E56E" }
+    subscribers = [
+                    {"cid":"80B24A7A-B437-11E3-B0C2-6AC7E058E56E"}, 
+                    {"cid":"34E7385C-B438-11E3-9386-6AC7E058E56E"}
+                  ]
   
   }
 
@@ -12,6 +14,7 @@ ruleset lab5 {
     select when foursquare checkin
       foreach subscribers setting (subscriber)
         pre {
+          cid = subscriber.pick("$.cid");
           checkin = event:attr("checkin").decode();
           venue = checkin.pick("$..venue.name");
           city = checkin.pick("$..location.city");
@@ -22,7 +25,7 @@ ruleset lab5 {
           myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
         }
         
-        event:send(subscriber,"location","notification") with values = myMap;
+        event:send(cid,"location","notification") with values = myMap;
       
   }
 
