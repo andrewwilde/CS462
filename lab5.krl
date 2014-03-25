@@ -1,4 +1,31 @@
 ruleset lab5 {
+
+  global{
+  
+    subscribers = { "cid":"80B24A7A-B437-11E3-B0C2-6AC7E058E56E", 
+                          "cid":"34E7385C-B438-11E3-9386-6AC7E058E56E" }
+  
+  }
+
+
+  rule dispatch {
+  select when foursquare checkin
+    foreach subscribers setting (subscriber)
+      pre {
+        checkin = event:attr("checkin").decode();
+        venue = checkin.pick("$..venue.name");
+        city = checkin.pick("$..location.city");
+        latitude = checkin.pick("$..location.lat");
+        longitude = checkin.pick("$..location.lng");
+        shout = checkin.pick("$..shout", true).head();
+        created = checkin.pick("$..createdAt");
+        myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
+      }
+      
+      event:send(subscriber,"location","notification") with values = myMap;
+      
+  }
+
   rule process_fs_checkin{
   
     select when foursquare checkin
