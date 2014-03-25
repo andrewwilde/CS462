@@ -10,7 +10,7 @@ ruleset lab5 {
   }
 
 
-  rule dispatcher {
+  rule dispatch {
     select when foursquare checkin
     
     foreach subscribers setting (subscriber)
@@ -26,9 +26,6 @@ ruleset lab5 {
       myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
       
     }
-    
-    event:send(cid,"location","notification") 
-            with attrs = {"values" : myMap};
     
     always {
       set ent:my_venue venue;
@@ -62,12 +59,6 @@ ruleset lab5 {
       raise pds event new_location_data with
         key = "fs_checkin" and
         value = myMap;
-      set ent:my_venue venue;
-      set ent:my_city city;
-      set ent:my_shout shout;
-      set ent:my_created created;
-      set ent:my_lat latitude;
-      set ent:my_lng longitude;
     }
     
   }
