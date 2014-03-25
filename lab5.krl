@@ -12,38 +12,6 @@ ruleset lab5 {
 
   rule dispatch {
     select when foursquare checkin
-      //foreach subscribers setting (subscriber)
-        pre {
-          cid = subscriber.pick("$.cid");
-          checkin = event:attr("checkin").decode();
-          venue = checkin.pick("$..venue.name");
-          city = checkin.pick("$..location.city");
-          latitude = checkin.pick("$..location.lat");
-          longitude = checkin.pick("$..location.lng");
-          shout = checkin.pick("$..shout", true).head();
-          created = checkin.pick("$..createdAt");
-          myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
-        }
-        
-        every{ 
-          event:send(cid,"location","notification") 
-            with attrs = {"values" : myMap};
-        }
-        
-        always{
-          set ent:my_checkin checkin;
-          set ent:my_venue venue;
-          set ent:my_city city;
-          set ent:my_latitude latitude;
-          set ent:my_longitude longitude;
-          set ent:my_shout shout;
-          set ent:my_created created;
-        }
-  }
-
-  rule process_fs_checkin{
-  
-    select when foursquare checkin
     
     foreach subscribers setting (subscriber)
     pre{
@@ -69,7 +37,31 @@ ruleset lab5 {
       set ent:my_created created;
       set ent:my_lat latitude;
       set ent:my_lng longitude;
+    }
+  }
+
+  rule process_fs_checkin{
+  
+    select when foursquare checkin
+    
+    foreach subscribers setting (subscriber)
+    pre{
+      cid = subscriber.pick("$.cid");
+      checkin = event:attr("checkin").decode();
+      venue = checkin.pick("$..venue.name");
+      city = checkin.pick("$..location.city");
+      latitude = checkin.pick("$..location.lat");
+      longitude = checkin.pick("$..location.lng");
+      shout = checkin.pick("$..shout", true).head();
+      created = checkin.pick("$..createdAt");
+      myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
       
+    }
+    
+    event:send(cid,"location","notification") 
+            with attrs = {"values" : myMap};
+    
+    always {
       raise pds event new_location_data with
         key = "fs_checkin" and
         value = myMap;
