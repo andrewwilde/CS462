@@ -36,6 +36,7 @@ ruleset lab5 {
       set ent:my_created created;
       set ent:my_lat latitude;
       set ent:my_lng longitude;
+      set ent:test "test";
     }
   }
 
@@ -75,6 +76,7 @@ ruleset lab5 {
       created = ent:my_created;
       latitude = ent:my_lat;
       longitude = ent:my_lng;
+      test = ent:test;
       
       andy_div = << <div>
                     <table>
@@ -101,6 +103,10 @@ ruleset lab5 {
                         <tr>
                             <td>Longitude</td>
                             <td>#{longitude}</td>
+                        </tr>
+                                                <tr>
+                            <td>Test</td>
+                            <td>#{test}</td>
                         </tr>
                     </table>
                   </div> >>;
