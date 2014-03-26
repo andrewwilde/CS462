@@ -25,10 +25,10 @@ ruleset lab5 {
       myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
       
     }
-    
-    event:send(subscriber{"cid"},"location","notification") 
+    {
+      event:send(subscriber{"cid"},"location","notification") 
         with attrs = {"values" : myMap};
-    
+    }
     always {
       set ent:my_venue venue;
       set ent:my_city city;
