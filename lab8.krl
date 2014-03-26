@@ -16,7 +16,6 @@ ruleset lab8{
     }
     
     always{
-      set ent:test "test";
       set ent:venue venue;
       set ent:city city;
       set ent:shout shout;
