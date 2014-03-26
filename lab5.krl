@@ -15,7 +15,6 @@ ruleset lab5 {
     
     foreach subscribers setting (subscriber)
     pre{
-      cid = subscriber.pick("$.cid");
       checkin = event:attr("checkin").decode();
       venue = checkin.pick("$..venue.name");
       city = checkin.pick("$..location.city");
@@ -26,6 +25,9 @@ ruleset lab5 {
       myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
       
     }
+    
+    event:send(subscriber{"cid"},"location","notification") 
+        with attrs = {"values" : myMap};
     
     always {
       set ent:my_venue venue;
