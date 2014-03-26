@@ -36,7 +36,7 @@ ruleset lab8{
                       <table>
                         <tr>
                           <td>Venue</td>
-                          <td>#{venue}</td>
+                          <td>#{ent:venue}</td>
                         </tr>
                         <tr>
                           <td>City</td>
