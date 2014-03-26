@@ -32,7 +32,7 @@ ruleset lab5 {
       
     }
     {
-      event:send(subscriber,"location","notification") 
+      event:send(subscription_map,"location","notification") 
         with attrs = {"values" : myMap};
     }
     always {
