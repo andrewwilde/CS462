@@ -16,6 +16,7 @@ ruleset lab8{
     }
     
     always{
+      set ent:test "test";
       set ent:venue venue;
       set ent:city city;
       set ent:shout shout;
@@ -31,7 +32,6 @@ ruleset lab8{
     select when pageview ".*"
   
     pre{
-      venue = ent:venue;
       andy_div = << <div>
                       <h3>Last Checkin </h3>
                       <table>
@@ -58,6 +58,10 @@ ruleset lab8{
                         <tr>
                           <td>Longitude</td>
                           <td>#{ent:longitude}</td>
+                        </tr>
+                        <tr>
+                          <td>Test</td>
+                          <td>#{ent:test}</td>
                         </tr>
                       </table> 
                     </div>
