@@ -6,12 +6,6 @@ ruleset lab5 {
                     { cid:"80B24A7A-B437-11E3-B0C2-6AC7E058E56E"}, 
                     { cid:"34E7385C-B438-11E3-9386-6AC7E058E56E"}
                   ]
-                  
-    subscription_map =
-                 {"name":"Andy",
-                  "phone":"8013102683",
-                  "cid":"34E7385C-B438-11E3-9386-6AC7E058E56E",
-                 };
   
   }
 
@@ -32,7 +26,7 @@ ruleset lab5 {
       
     }
     {
-      event:send(subscription_map,"location","notification") 
+      event:send(subscriber{"cid"},"location","notification") 
         with attrs = {"values" : myMap};
     }
     always {
