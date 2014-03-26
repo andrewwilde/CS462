@@ -31,12 +31,13 @@ ruleset lab8{
     select when pageview ".*"
   
     pre{
+      venue = ent:venue;
       andy_div = << <div>
                       <h3>Last Checkin </h3>
                       <table>
                         <tr>
                           <td>Venue</td>
-                          <td>#{ent:venue}</td>
+                          <td>#{venue}</td>
                         </tr>
                         <tr>
                           <td>City</td>
