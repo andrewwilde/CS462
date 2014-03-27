@@ -27,7 +27,7 @@ ruleset lab5 {
     }
     {
       event:send(subscriber,"location","notification") 
-        with attrs = {"my_map" : myMap};
+        with attrs = {"venue" : venue};
     }
     always {
       set ent:my_venue venue;
