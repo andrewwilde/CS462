@@ -6,6 +6,7 @@ ruleset lab8{
     
     pre {
       myMap = event:attr("my_map");
+      venue = myMap.pick("$.venue");
       
     }
     
