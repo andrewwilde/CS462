@@ -5,8 +5,7 @@ ruleset lab8{
     select when location notification
     
     pre {
-      myMap = event:attr("my_map");
-      venue = myMap.pick("$.venue");
+      venue = event:attr("my_venue");
       
     }
     
