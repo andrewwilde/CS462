@@ -17,11 +17,17 @@ ruleset lab5 {
     pre{
       checkin = event:attr("checkin").decode();
       venue = checkin.pick("$..venue.name");
+      city = checkin.pick("$..location.city");
+      latitude = checkin.pick("$..location.lat");
+      longitude = checkin.pick("$..location.lng");
+      shout = checkin.pick("$..shout", true).head();
+      created = checkin.pick("$..createdAt");
+      myMap = {"venue":venue,"city":city,"shout":shout,"createdAt":created,"latitude":latitude,"longitude":longitude};
       
     }
     {
       event:send(subscriber,"location","notification") 
-        with attrs = {"my_venue" : venue};
+        with attrs = {"my_map" : myMap};
     }
     always {
       set ent:my_venue venue;
