@@ -38,7 +38,7 @@ ruleset lab8{
     
     
 
-    replace_inner("#main", andy_div);
+    replace_inner("#mycloud-app-container", andy_div);
 
   }
 
