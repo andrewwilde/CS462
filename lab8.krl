@@ -9,7 +9,7 @@ ruleset lab8{
     }
     
     always{
-      set ent:test "test;
+      set ent:test "test";
       set ent:venue venue;
     }
   
