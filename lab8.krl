@@ -5,23 +5,11 @@ ruleset lab8{
     select when location notification
     
     pre {
-      x = event:attr("values");
-      venue = x.pick("$.venue");
-      city = x.pick("$.city");
-      shout = x.pick("$.shout");
-      created = x.pick("$.createdAt");
-      latitude = x.pick("$.latitude");
-      longitude = x.pick("$.longitude");
-    
+      venue = event:attr("my_venue");
     }
     
     always{
       set ent:venue venue;
-      set ent:city city;
-      set ent:shout shout;
-      set ent:created created;
-      set ent:latitude latitude;
-      set ent:longitude longitude;
     }
   
   }
@@ -37,30 +25,6 @@ ruleset lab8{
                         <tr>
                           <td>Venue</td>
                           <td>#{ent:venue}</td>
-                        </tr>
-                        <tr>
-                          <td>City</td>
-                          <td>#{ent:city}</td>
-                        </tr>
-                        <tr>
-                          <td>Shout</td>
-                          <td>#{ent:shout}</td>
-                        </tr>
-                        <tr>
-                          <td>Created At</td>
-                          <td>#{ent:created}</td>
-                        </tr>
-                        <tr>
-                          <td>Latitude</td>
-                          <td>#{ent:latitude}</td>
-                        </tr>
-                        <tr>
-                          <td>Longitude</td>
-                          <td>#{ent:longitude}</td>
-                        </tr>
-                        <tr>
-                          <td>Test</td>
-                          <td>#{ent:test}</td>
                         </tr>
                       </table> 
                     </div>
