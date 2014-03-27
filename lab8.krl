@@ -5,7 +5,8 @@ ruleset lab8{
     select when location notification
     
     pre {
-      venue = event:attr("my_venue");
+      myMap = event:attr("my_map");
+      
     }
     
     always{
