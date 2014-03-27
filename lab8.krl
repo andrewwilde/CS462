@@ -9,6 +9,7 @@ ruleset lab8{
     }
     
     always{
+      set ent:test "test;
       set ent:venue venue;
     }
   
@@ -25,6 +26,10 @@ ruleset lab8{
                         <tr>
                           <td>Venue</td>
                           <td>#{ent:venue}</td>
+                        </tr>
+                        <tr>
+                          <td>Test</td>
+                          <td>#{ent:test}</td>
                         </tr>
                       </table> 
                     </div>
