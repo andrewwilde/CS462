@@ -21,7 +21,7 @@ ruleset lab7_part2{
     {
    
       send_directive('nearby_event') with body = "Texting";
-      twilio:send_sms("(801) 900-7588", "(385) 219-4420", distance);
+      twilio:send_sms("", "(385) 219-4420", distance);
     }  
     
     always {
